@@ -1,0 +1,58 @@
+name: included_old_counseling
+data:
+  - resourceType: Patient
+    name: Joe Smith
+    gender: male
+    birthDate: 1980-02-16T00:00:00.000Z
+  - resourceType: Condition
+    code: 'ICD10CM#I10 Essential (primary) hypertension'
+    onsetDateTime: 2018-04-05T00:00:00.000Z
+  - resourceType: ServiceRequest
+    code: 'ICD10CM#Z71.3 Dietary counseling and surveillance'
+    status: completed
+    authoredOn: 2008-04-05T00:00:00.000Z
+results:
+  Notification: >-
+    You may be at risk for (in other words, more likely to have) heart disease
+    or a stroke based upon risk factors you may have.
+
+
+    Risk factors include high blood pressure, high LDL cholesterol (the “bad”
+    kind of cholesterol), low HDL cholesterol (the “good” kind), high
+    Triglycerides, high blood sugar, or too much weight around your middle.
+  Recommendation: >-
+    Experts (i.e., [The U.S. Preventive Services Task
+    Force](https://www.uspreventiveservicestaskforce.org/Page/Name/about-the-uspstf))
+    find that one way to lower the risk of heart disease and stroke is through
+    counseling and coaching programs that help you eat healthy foods and
+    increase your physical activity (exercise and movement). These programs
+    typically involve a trained counselor who can teach you, help you set goals,
+    share ways to eat a healthy diet and increase physical activity and
+    regularly follow up with you.
+
+
+    Contact your doctor to discuss whether coaching and counseling are right for
+    you.
+
+
+    In addition, the experts know that all adults, whether they are at an
+    increased risk for heart disease and stroke or not, can improve their health
+    through healthy eating and being more physically active.
+
+
+    Here are some links to resources to help you get started:
+
+
+    * [Tips for healthy eating from
+    healthfinder.gov](https://healthfinder.gov/HealthTopics/Category/health-conditions-and-diseases/diabetes/eat-healthy)
+
+    * [Online cookbook with recipes for heart-healthy, tasty
+    meals](https://healthyeating.nhlbi.nih.gov/pdfs/Dinners_Cookbook_508-compliant.pdf)
+
+    * [Ways to get more
+    active!](https://healthfinder.gov/HealthTopics/Category/health-conditions-and-diseases/diabetes/get-active)
+
+    * [The U.S. Preventive Services Task Force Recommendation on “Healthful Diet
+    and Physical Activity for Cardiovascular Disease Prevention in Adults With
+    Cardiovascular Risk
+    Factors”](https://www.uspreventiveservicestaskforce.org/Page/Document/UpdateSummaryFinal/healthy-diet-and-physical-activity-counseling-adults-with-high-risk-of-cvd?ds=1&s=Healthful%20Diet)

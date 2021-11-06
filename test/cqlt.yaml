@@ -1,0 +1,7 @@
+---
+library:
+  name: USPSTF_Diet_and_Activity_for_CVD_Prevention_in_Adults_FHIRv401
+  paths: ../cql
+tests:
+  path: cases
+

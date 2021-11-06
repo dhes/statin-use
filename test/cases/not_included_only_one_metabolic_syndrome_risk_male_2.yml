@@ -1,0 +1,13 @@
+name: not_included_only_one_metabolic_syndrome_risk_male_2
+data:
+  - resourceType: Patient
+    name: Joe Smith
+    gender: male
+    birthDate: 1980-02-16T00:00:00.000Z
+  - resourceType: Observation
+    code: 'LOINC#8280-0 Waist Circumference at umbilicus by Tape measure'
+    valueQuantity: '41 [in_i]'
+    effectiveDateTime: 2019-04-05T16:00:00.000Z
+results:
+  Notification: null
+  Recommendation: null

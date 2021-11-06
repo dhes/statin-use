@@ -1,0 +1,12 @@
+name: not_included_impaired_fasting_glucose_male
+data:
+  - resourceType: Patient
+    name: Joe Smith
+    gender: male
+    birthDate: 1980-02-16T00:00:00.000Z
+  - resourceType: Condition
+    code: 'ICD10CM#R73.01 Impaired fasting glucose'
+    onsetDateTime: 2019-04-05T00:00:00.000Z
+results:
+  Notification: null
+  Recommendation: null

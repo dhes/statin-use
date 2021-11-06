@@ -1,0 +1,16 @@
+name: excluded_behavioral_counseling_referral_request_alternativeStatuses_male_2
+data:
+  - resourceType: Patient
+    name: Joe Smith
+    gender: male
+    birthDate: 1980-02-16T00:00:00.000Z
+  - resourceType: Condition
+    code: 'ICD10CM#I10 Essential (primary) hypertension'
+    onsetDateTime: 2018-04-05T00:00:00.000Z
+  - resourceType: ServiceRequest
+    code: 'SNOMEDCT#408289007 Refer to weight management program (procedure)'
+    status: active
+    authoredOn: 2019-04-05T00:00:00.000Z
+results:
+  Notification: null
+  Recommendation: null

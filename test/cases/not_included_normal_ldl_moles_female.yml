@@ -1,0 +1,14 @@
+name: not_included_normal_ldl_moles_female
+data:
+  - resourceType: Patient
+    name: Jane Smith
+    gender: female
+    birthDate: 1980-02-16T00:00:00.000Z
+  - resourceType: Observation
+    code: 'LOINC#22748-8 Cholesterol in LDL [Moles/volume] in Serum or Plasma'
+    valueQuantity: 2.61 mmol/L
+    issued: 2019-04-05T00:00:00.000Z
+    effectiveDateTime: 2019-04-05T16:00:00.000Z
+results:
+  Notification: null
+  Recommendation: null

@@ -1,0 +1,15 @@
+name: excluded_cvd_male_15
+data:
+  - resourceType: Patient
+    name: Joe Smith
+    gender: male
+    birthDate: 1980-02-16T00:00:00.000Z
+  - resourceType: Condition
+    code: 'ICD10CM#I10 Essential (primary) hypertension'
+    onsetDateTime: 2018-04-05T00:00:00.000Z
+  - resourceType: Condition
+    code: 'ICD9CMD#434.10 Cerebral embolism without mention of cerebral infarction'
+    onsetDateTime: 2018-12-02T16:00:00.000Z
+results:
+  Notification: null
+  Recommendation: null

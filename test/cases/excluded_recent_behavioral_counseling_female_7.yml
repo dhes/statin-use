@@ -1,0 +1,17 @@
+name: excluded_recent_behavioral_counseling_female_7
+data:
+  - resourceType: Patient
+    name: Jane Smith
+    gender: female
+    birthDate: 1980-02-16T00:00:00.000Z
+  - resourceType: Condition
+    code: 'ICD10CM#I10 Essential (primary) hypertension'
+    onsetDateTime: 2018-04-05T00:00:00.000Z
+  - resourceType: Encounter
+    status: finished
+    reasonCode:
+      - 'SNOMEDCT#11816003 Diet education (procedure)'
+    period: 2019-04-05T00:00:00.000Z
+results:
+  Notification: null
+  Recommendation: null
