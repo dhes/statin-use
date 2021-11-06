@@ -4,4 +4,8 @@ library:
   paths: ../cql
 tests:
   path: cases
+options:
+  dumpFiles: 
+    enabled: true
+
 
