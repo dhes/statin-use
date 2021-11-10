@@ -1,6 +1,6 @@
 ---
 library:
-  name: USPSTF_Diet_and_Activity_for_CVD_Prevention_in_Adults_FHIRv401
+  name: USPSTF_Abdominal_Aortic_Aneurysm_Screening_FHIRv401
   paths: ../cql
 tests:
   path: cases

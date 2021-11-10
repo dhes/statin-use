@@ -1,15 +1,8 @@
-// Derived from USPSTF Recommendation on Healthful Diet and Physical Activity for Cardiovascular Disease Prevention in
-// Adults With Cardiovascular Risk Factors: Behavioral Counseling.  Grade B recommendation. Available at:
-// https://www.uspreventiveservicestaskforce.org/Page/Document/UpdateSummaryFinal/healthy-diet-and-physical-activity-counseling-adults-with-high-risk-of-cvd
+// Derived from USPSTF Recommendation on Abdominal Aortic Aneurysm: Screening.  Grade B recommendation. Available at:
+// https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/abdominal-aortic-aneurysm-screening
 //
-// This version is a FHIR R4 port of USPSTF_Diet_and_Activity_for_CVD_Prevention_in_Adults_FHIRv102 version '1.1.0'. In
-// addition to porting the data model, it also leverages new profiles, resulting in the following additional changes
-// from the DSTU2 version:
-// - Uses FHIR core Blood Pressure profile (which, from a CQL logic perspective, is the same as the corresponding Argonaut profile)
-//   - NOTE: For backward compatibility, the CQL logic retains support for standalone Systolic and Diastolic BP observations
-//
-// NOTE: The R4 port of this artifact has not been piloted in a clinical setting, but has undergone logic testing and review.
-library USPSTF_Diet_and_Activity_for_CVD_Prevention_in_Adults_FHIRv401 version '1.0.0'
+// NOTE: This artifact has not been piloted in a clinical setting, nor has it has undergone logic testing.
+library USPSTF_Abdominal_Aortic_Aneurysm_Screening_FHIRv401
 
 // Data model
 using FHIR version '4.0.1'
@@ -25,43 +18,45 @@ codesystem "SNOMED-CT": 'http://snomed.info/sct'
 codesystem "ICD-10-CM": 'http://hl7.org/fhir/sid/icd-10-cm'
 
 // Value sets
-valueset "Hypertension": 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1032.9'
-valueset "Elevated Blood Pressure Reading SNOMEDCT": 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1047.513'
-valueset "Elevated Blood Pressure Reading ICD10CM": 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1047.512'
-valueset "LDL Test": 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.11.1029'
-valueset "LDL-c": 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.215'
-valueset "HDL-C Laboratory Test": 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.104.12.1012'
-valueset "High Density Lipoprotein (HDL) LOINC": 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.600.873'
-valueset "Waist circumference": 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1032.88'
-valueset "Triglycerides LOINC": 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.600.881'
-valueset "Fasting Plasma Glucose": 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1032.87'
-valueset "Myocardial Infarction": 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.403'
-valueset "Acute Myocardial Infarction": 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.104.12.1001'
-valueset "CABG Surgeries": 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.694'
-valueset "Coronary Artery Bypass Graft": 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.104.11.1004'
-valueset "Percutaneous Coronary Intervention ICD10": 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3157.2000.1'
-valueset "Percutaneous Coronary Intervention SNOMEDCT": 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3157.2000.2'
-valueset "Ischemic Vascular Disease": 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.104.12.1003'
-valueset "Carotid Intervention": 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.204'
-valueset "Pregnancy": 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.378'
-valueset "Pregnancy (New ICD10 codes published in 2018 and 2019)": 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1032.80'
-valueset "BMI Follow Up Plan ICD10CM": 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1195.112'
-valueset "Counseling for Nutrition": 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.195.11.1004'
-valueset "Counseling for Physical Activity": 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.118.11.1042'
-valueset "Behavioral Counseling for Nutrition and Activity Referral": 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1032.79'
-
-// Individual codes
-code "Pregnancy status": '82810-3' from "LOINC" display 'Pregnancy status'
-code "Pregnant": '77386006' from "SNOMED-CT" display 'Patient currently pregnant (finding)'
-// Using the blood pressure panel code defined in FHIR Core Vital Signs profiles: <http://hl7.org/fhir/R4/bp.html>
-code "Blood pressure panel": '85354-9' from "LOINC" display 'Blood pressure panel with all children optional'
-code "Systolic blood pressure": '8480-6' from "LOINC" display 'Systolic blood pressure'
-code "Diastolic blood pressure": '8462-4' from "LOINC" display 'Diastolic blood pressure'
-// Using the LOINC Code for the ACC/AHA cardiovascular pooled cohort risk calculator
-code "CVD 10-year risk": '79423-0' from "LOINC" display 'Cardiovascular disease 10Y risk [Likelihood] ACC-AHA Pooled Cohort by Goff 2013'
+// valueset "Hypertension": 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1032.9'
+// valueset "Elevated Blood Pressure Reading SNOMEDCT": 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1047.513'
+// valueset "Elevated Blood Pressure Reading ICD10CM": 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1047.512'
+// valueset "LDL Test": 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.11.1029'
+// valueset "LDL-c": 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.215'
+// valueset "HDL-C Laboratory Test": 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.104.12.1012'
+// valueset "High Density Lipoprotein (HDL) LOINC": 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.600.873'
+// valueset "Waist circumference": 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1032.88'
+// valueset "Triglycerides LOINC": 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.600.881'
+// valueset "Fasting Plasma Glucose": 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1032.87'
+// valueset "Myocardial Infarction": 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.403'
+// valueset "Acute Myocardial Infarction": 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.104.12.1001'
+// valueset "CABG Surgeries": 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.694'
+// valueset "Coronary Artery Bypass Graft": 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.104.11.1004'
+// valueset "Percutaneous Coronary Intervention ICD10": 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3157.2000.1'
+// valueset "Percutaneous Coronary Intervention SNOMEDCT": 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3157.2000.2'
+// valueset "Ischemic Vascular Disease": 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.104.12.1003'
+// valueset "Carotid Intervention": 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.204'
+// valueset "Pregnancy": 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.378'
+// valueset "Pregnancy (New ICD10 codes published in 2018 and 2019)": 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1032.80'
+// valueset "BMI Follow Up Plan ICD10CM": 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1195.112'
+// valueset "Counseling for Nutrition": 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.195.11.1004'
+// valueset "Counseling for Physical Activity": 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.118.11.1042'
+// valueset "Behavioral Counseling for Nutrition and Activity Referral": 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1032.79'
 // DH:
 // [See value set in VSAC](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.3.600.2390/expansion)
-valueset "Current Tobacco Smoker": 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.600.2390
+valueset "Current Tobacco Smoker": 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.600.2390'
+
+// Individual codes
+// code "Pregnancy status": '82810-3' from "LOINC" display 'Pregnancy status'
+// code "Pregnant": '77386006' from "SNOMED-CT" display 'Patient currently pregnant (finding)'
+// Using the blood pressure panel code defined in FHIR Core Vital Signs profiles: <http://hl7.org/fhir/R4/bp.html>
+// code "Blood pressure panel": '85354-9' from "LOINC" display 'Blood pressure panel with all children optional'
+// code "Systolic blood pressure": '8480-6' from "LOINC" display 'Systolic blood pressure'
+// code "Diastolic blood pressure": '8462-4' from "LOINC" display 'Diastolic blood pressure'
+// Using the LOINC Code for the ACC/AHA cardiovascular pooled cohort risk calculator
+// code "CVD 10-year risk": '79423-0' from "LOINC" display 'Cardiovascular disease 10Y risk [Likelihood] ACC-AHA Pooled Cohort by Goff 2013'
+// DH: 
+code "Never smoker": '266919005' from "SNOMED-CT" display 'Never smoked tobacco (finding)'
 
 context Patient
 
@@ -69,97 +64,97 @@ context Patient
 
 // Observations must have one of the following populated, otherwise ObservationLookBack() will filter out:
 // effectiveDateTime, effectivePeriod, issued
-define MostRecentLDLcTest:
-  C3F.MostRecent(C3F.Verified(C3F.ObservationLookBack(
-    [Observation: "LDL Test"] union
-    [Observation: "LDL-c"], 6 years)))
+// define MostRecentLDLcTest:
+//   C3F.MostRecent(C3F.Verified(C3F.ObservationLookBack(
+//     [Observation: "LDL Test"] union
+//     [Observation: "LDL-c"], 6 years)))
 
-define MostRecentLDLcTestResult:
-  Convert.to_mg_per_dL_for_blood_cholesterol(C3F.QuantityValue(MostRecentLDLcTest))
+// define MostRecentLDLcTestResult:
+//   Convert.to_mg_per_dL_for_blood_cholesterol(C3F.QuantityValue(MostRecentLDLcTest))
 
-define MostRecentHDLcTest:
-  C3F.MostRecent(C3F.Verified(C3F.ObservationLookBack(
-    [Observation: "HDL-C Laboratory Test"] union
-    [Observation: "High Density Lipoprotein (HDL) LOINC"], 6 years)))
+// define MostRecentHDLcTest:
+//   C3F.MostRecent(C3F.Verified(C3F.ObservationLookBack(
+//     [Observation: "HDL-C Laboratory Test"] union
+//     [Observation: "High Density Lipoprotein (HDL) LOINC"], 6 years)))
 
-define MostRecentHDLcTestResult:
-  Convert.to_mg_per_dL_for_blood_cholesterol(C3F.QuantityValue(MostRecentHDLcTest))
+// define MostRecentHDLcTestResult:
+//   Convert.to_mg_per_dL_for_blood_cholesterol(C3F.QuantityValue(MostRecentHDLcTest))
 
-define MostRecentWaistCircumferenceMeasurement:
-  C3F.MostRecent(C3F.Verified(C3F.ObservationLookBack([Observation: "Waist circumference"], 6 years)))
+// define MostRecentWaistCircumferenceMeasurement:
+//   C3F.MostRecent(C3F.Verified(C3F.ObservationLookBack([Observation: "Waist circumference"], 6 years)))
 
-define MostRecentWaistCircumferenceValue:
-  C3F.QuantityValue(MostRecentWaistCircumferenceMeasurement)
+// define MostRecentWaistCircumferenceValue:
+//   C3F.QuantityValue(MostRecentWaistCircumferenceMeasurement)
 
-define MostRecentTriglycerideLab:
-  C3F.MostRecent(C3F.Verified(C3F.ObservationLookBack(
-    [Observation: "Triglycerides LOINC"], 6 years)))
+// define MostRecentTriglycerideLab:
+//   C3F.MostRecent(C3F.Verified(C3F.ObservationLookBack(
+//     [Observation: "Triglycerides LOINC"], 6 years)))
 
-define MostRecentTriglycerideLabResult:
-  Convert.to_mg_per_dL_for_triglyceride(C3F.QuantityValue(MostRecentTriglycerideLab))
+// define MostRecentTriglycerideLabResult:
+//   Convert.to_mg_per_dL_for_triglyceride(C3F.QuantityValue(MostRecentTriglycerideLab))
 
-define BloodPressurePanelObservations:
-  C3F.Verified(C3F.ObservationLookBack([Observation: "Blood pressure panel"], 6 years))
+// define BloodPressurePanelObservations:
+//   C3F.Verified(C3F.ObservationLookBack([Observation: "Blood pressure panel"], 6 years))
 
-define SystolicObservations:
-  C3F.Verified(C3F.ObservationLookBack([Observation: "Systolic blood pressure"], 6 years))
+// define SystolicObservations:
+//   C3F.Verified(C3F.ObservationLookBack([Observation: "Systolic blood pressure"], 6 years))
 
-define DiastolicObservations:
-  C3F.Verified(C3F.ObservationLookBack([Observation: "Diastolic blood pressure"], 6 years))
+// define DiastolicObservations:
+//   C3F.Verified(C3F.ObservationLookBack([Observation: "Diastolic blood pressure"], 6 years))
 
 // Get blood pressure panels (for which systolic BP is a component value) and systolic observations (for which
 // systolic BP is the primary value). The correct value location needs to be extracted based on the Observation
 // code.  See MostRecentSystolicBloodPressureValue.
-define MostRecentSystolicBloodPressureReading:
-  C3F.MostRecent(
-    (BloodPressurePanelObservations BP where exists ((BP.component) C where C.code ~ "Systolic blood pressure"))
-    union SystolicObservations)
+// define MostRecentSystolicBloodPressureReading:
+//   C3F.MostRecent(
+//     (BloodPressurePanelObservations BP where exists ((BP.component) C where C.code ~ "Systolic blood pressure"))
+//     union SystolicObservations)
 
 // Get systolic blood pressure value accounting for whether the Observation is a BP observation or
 // Systolic BP observation.
-define MostRecentSystolicBloodPressureValue:
-  if MostRecentSystolicBloodPressureReading.code ~ "Blood pressure panel" then
-    singleton from (
-      (MostRecentSystolicBloodPressureReading.component) C
-      where C.code ~ "Systolic blood pressure"
-      return FHIRHelpers.ToQuantity(C.value as FHIR.Quantity)
-    )
-  else
-    C3F.QuantityValue(MostRecentSystolicBloodPressureReading)
+// define MostRecentSystolicBloodPressureValue:
+//   if MostRecentSystolicBloodPressureReading.code ~ "Blood pressure panel" then
+//     singleton from (
+//       (MostRecentSystolicBloodPressureReading.component) C
+//       where C.code ~ "Systolic blood pressure"
+//       return FHIRHelpers.ToQuantity(C.value as FHIR.Quantity)
+//     )
+//   else
+//     C3F.QuantityValue(MostRecentSystolicBloodPressureReading)
 
 // Get blood pressure panels (for which diastolic BP is a component value) and diastolic observations (for which
 // diastolic BP is the primary value). The correct value location needs to be extracted based on the Observation
 // code.  See MostRecentDiastolicBloodPressureValue.
-define MostRecentDiastolicBloodPressureReading:
-  C3F.MostRecent(
-    (BloodPressurePanelObservations BP where exists ((BP.component) C where C.code ~ "Diastolic blood pressure"))
-    union DiastolicObservations)
+// define MostRecentDiastolicBloodPressureReading:
+//   C3F.MostRecent(
+//     (BloodPressurePanelObservations BP where exists ((BP.component) C where C.code ~ "Diastolic blood pressure"))
+//     union DiastolicObservations)
 
 // Get diastolic blood pressure value accounting for whether the Observation is a BP observation or
 // Diastolic BP observation.
-define MostRecentDiastolicBloodPressureValue:
-  if MostRecentDiastolicBloodPressureReading.code ~ "Blood pressure panel" then
-    singleton from (
-      (MostRecentDiastolicBloodPressureReading.component) C
-      where C.code ~ "Diastolic blood pressure"
-      return FHIRHelpers.ToQuantity(C.value as FHIR.Quantity)
-    )
-  else
-    C3F.QuantityValue(MostRecentDiastolicBloodPressureReading)
+// define MostRecentDiastolicBloodPressureValue:
+//   if MostRecentDiastolicBloodPressureReading.code ~ "Blood pressure panel" then
+//     singleton from (
+//       (MostRecentDiastolicBloodPressureReading.component) C
+//       where C.code ~ "Diastolic blood pressure"
+//       return FHIRHelpers.ToQuantity(C.value as FHIR.Quantity)
+//     )
+//   else
+//     C3F.QuantityValue(MostRecentDiastolicBloodPressureReading)
 
-define MostRecentFastingPlasmaGlucoseTest:
-  C3F.MostRecent(C3F.Verified(C3F.ObservationLookBack(
-    [Observation: "Fasting Plasma Glucose"], 6 years)))
+// define MostRecentFastingPlasmaGlucoseTest:
+//   C3F.MostRecent(C3F.Verified(C3F.ObservationLookBack(
+//     [Observation: "Fasting Plasma Glucose"], 6 years)))
 
-define MostRecentFastingPlasmaGlucoseValue:
-  Convert.to_mg_per_dL_for_blood_glucose(C3F.QuantityValue(MostRecentFastingPlasmaGlucoseTest))
+// define MostRecentFastingPlasmaGlucoseValue:
+//   Convert.to_mg_per_dL_for_blood_glucose(C3F.QuantityValue(MostRecentFastingPlasmaGlucoseTest))
 
-define MostRecentCVDRiskScore:
-  C3F.MostRecent(C3F.Verified(C3F.ObservationLookBack(
-    [Observation: "CVD 10-year risk"], 6 years)))
+// define MostRecentCVDRiskScore:
+//   C3F.MostRecent(C3F.Verified(C3F.ObservationLookBack(
+//     [Observation: "CVD 10-year risk"], 6 years)))
 
-define MostRecentCVDRiskScoreValue:
-  C3F.QuantityValue(MostRecentCVDRiskScore)
+// define MostRecentCVDRiskScoreValue:
+//   C3F.QuantityValue(MostRecentCVDRiskScore)
 
 // Inclusions
 define Is18YearsOrOlder:
