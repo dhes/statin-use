@@ -7,5 +7,3 @@ tests:
 options:
   dumpFiles: 
     enabled: true
-
-
