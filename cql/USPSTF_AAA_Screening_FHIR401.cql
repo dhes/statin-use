@@ -28,6 +28,11 @@ context Patient
 
 // Pertinent patient data
 
+// this can be commented out or removed, it's just so
+// coders can see the age. 
+define Age: 
+  AgeInYears()
+
 define Is65Through75YearsOld:
   AgeInYears() >= 65 and AgeInYears() <76
 

@@ -6,7 +6,7 @@ data:
 # Unless today is 2021-11-10
 # ...please adjust the birthdate to make this patient's   
 # ...age 76 years.
-    birthDate: 1945-11-11
+    birthDate: 1945-11-09
 results:
   Notification: null
   Recommendation: null

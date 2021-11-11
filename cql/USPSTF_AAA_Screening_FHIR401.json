@@ -88,6 +88,22 @@
                }
             }
          }, {
+            "name" : "Age",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "precision" : "Year",
+               "type" : "CalculateAge",
+               "operand" : {
+                  "path" : "birthDate.value",
+                  "type" : "Property",
+                  "source" : {
+                     "name" : "Patient",
+                     "type" : "ExpressionRef"
+                  }
+               }
+            }
+         }, {
             "name" : "Is65Through75YearsOld",
             "context" : "Patient",
             "accessLevel" : "Public",
