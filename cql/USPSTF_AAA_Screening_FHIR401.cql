@@ -19,17 +19,19 @@ codesystem "ICD-10-CM": 'http://hl7.org/fhir/sid/icd-10-cm'
 
 // Value sets
 // [See value set in VSAC](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.3.600.2390/expansion)
-valueset "Current Tobacco Smoker": 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.600.2390'
+valueset CurrentTobaccoSmoker: 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.600.2390'
 
 // Individual codes
+code "Tobacco smoking status": '72166-2' from "LOINC" display 'Tobacco smoking status'
 code "Never smoker": '266919005' from "SNOMED-CT" display 'Never smoked tobacco (finding)'
 
 context Patient
 
 // Pertinent patient data
 
-// this can be commented out or removed, it's just so
-// coders can see the age. 
+// This Age definition is just so
+// ...coders can see the age as they troubleshoot. 
+// ...You safely delete it. 
 define Age: 
   AgeInYears()
 
@@ -39,11 +41,23 @@ define Is65Through75YearsOld:
 define IsMale: 
   if Patient.gender.value is not null 
     then Patient.gender.value = 'male' 
-    else null
+  else null
+
+// <http://www.hl7.org/fhir/us/core/StructureDefinition-us-core-smokingstatus.html>
+define MostRecentValidSmokingStatus:
+  C3F.ConceptValue(C3F.MostRecent(C3F.Verified(C3F.ObservationLookBack([Observation: "Tobacco smoking status"], 6 years))))
+
+define TobaccoSmokingStatus:
+  [Observation: "Tobacco smoking status"] S
+  return S.value as CodeableConcept
+// define EverSmoked:
+//   if MostRecentValidSmokingStatus is not null  
+//     then any ValidSmokingStatus in CurrentTobaccoSmoker
+//   else null
 
 define Included:
   Is65Through75YearsOld
-  // IsEverSmoker // todo
+  and TobaccoSmokingStatus in CurrentTobaccoSmoker
   and IsMale
 
 // Exclusions
@@ -88,9 +102,9 @@ Here are some links to resources to help you get started:
   else
     null
 
-// define Information: // to do
-  // (List{ // to do
-    // if (IsEverSmoker is null) then // to do
-    // 'INFORMATION: Not smoking status is available.'
-    // else null
-  // }) W where W is not null
+ define Information: // to do
+   (List{ // to do - there's more
+     if (MostRecentValidSmokingStatus is null) then 
+     'INFORMATION: No smoking status is available.'
+     else null
+   }) W where W is not null

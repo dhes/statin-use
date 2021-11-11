@@ -1,0 +1,12 @@
+name: candidate_no_smoking_status
+data:
+  - resourceType: Patient
+    name: Joe Smith
+    gender: male
+# Unless today is 2021-11-10
+# ...please adjust the birthdate to make this patient's   
+# ...age 60 years. 
+    birthDate: 1951-11-10
+results:
+  Notification: null
+  Recommendation: null
