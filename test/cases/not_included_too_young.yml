@@ -1,10 +1,11 @@
-name: excluded_too_young
+name: not_included_too_young
 data:
   - resourceType: Patient
     name: Joe Smith
     gender: male
-# please adjust the birthdate to make this patient's   
-# age 65 years minus 1 day
+# Unless today is 2021-11-10
+# ...please adjust the birthdate to make this patient's   
+# ...age 65 years minus 1 day.
     birthDate: 1956-11-09
 results:
   Notification: null

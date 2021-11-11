@@ -132,12 +132,73 @@
                } ]
             }
          }, {
+            "name" : "IsMale",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "type" : "If",
+               "condition" : {
+                  "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                  "type" : "As",
+                  "operand" : {
+                     "type" : "Not",
+                     "operand" : {
+                        "type" : "IsNull",
+                        "operand" : {
+                           "path" : "value",
+                           "type" : "Property",
+                           "source" : {
+                              "path" : "gender",
+                              "type" : "Property",
+                              "source" : {
+                                 "name" : "Patient",
+                                 "type" : "ExpressionRef"
+                              }
+                           }
+                        }
+                     }
+                  }
+               },
+               "then" : {
+                  "type" : "Equal",
+                  "operand" : [ {
+                     "path" : "value",
+                     "type" : "Property",
+                     "source" : {
+                        "path" : "gender",
+                        "type" : "Property",
+                        "source" : {
+                           "name" : "Patient",
+                           "type" : "ExpressionRef"
+                        }
+                     }
+                  }, {
+                     "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                     "value" : "male",
+                     "type" : "Literal"
+                  } ]
+               },
+               "else" : {
+                  "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                  "type" : "As",
+                  "operand" : {
+                     "type" : "Null"
+                  }
+               }
+            }
+         }, {
             "name" : "Included",
             "context" : "Patient",
             "accessLevel" : "Public",
             "expression" : {
-               "name" : "Is65Through75YearsOld",
-               "type" : "ExpressionRef"
+               "type" : "And",
+               "operand" : [ {
+                  "name" : "Is65Through75YearsOld",
+                  "type" : "ExpressionRef"
+               }, {
+                  "name" : "IsMale",
+                  "type" : "ExpressionRef"
+               } ]
             }
          }, {
             "name" : "InPopulation",

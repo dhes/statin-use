@@ -31,11 +31,15 @@ context Patient
 define Is65Through75YearsOld:
   AgeInYears() >= 65 and AgeInYears() <76
 
+define IsMale: 
+  if Patient.gender.value is not null 
+    then Patient.gender.value = 'male' 
+    else null
+
 define Included:
-  //Is18YearsOrOlder and
-  Is65Through75YearsOld // todo
-  //HasRiskFactors
+  Is65Through75YearsOld
   // IsEverSmoker // todo
+  and IsMale
 
 // Exclusions
 
