@@ -24,6 +24,12 @@ valueset CurrentTobaccoSmoker: 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1
 // Individual codes
 code "Tobacco smoking status": '72166-2' from "LOINC" display 'Tobacco smoking status'
 code "Never smoker": '266919005' from "SNOMED-CT" display 'Never smoked tobacco (finding)'
+code "Ultrasound scan of abdominal aorta": '241462009' from  "SNOMED-CT" display 'Ultrasound scan of abdominal aorta (procedure)'
+
+// notes:
+// Aorta/Iliac ultrasound (limited) CPT 93979
+// SNOMEDCT 241462009 | Ultrasound scan of abdominal aorta (procedure) 
+// LOINC 79374-5 US Abdominal Aorta for screening
 
 context Patient
 
@@ -68,8 +74,11 @@ define Included:
 // define HasHadAaaRepair:
   // to do
 
-//define AaaUS:
-  // to do
+define AbdomenAortaUltrasound:
+  [Procedure: "Ultrasound scan of abdominal aorta"] P
+
+define HasHadAbdomenAortaUltrasound:
+  Exists(AbdomenAortaUltrasound)
 
 // Procedures must have performedDateTime or performedPeriod fields populated, otherwise ProcedureLookBack() will filter out.
 // define RecentNutritionAndActivityCounselingProcedures:
@@ -78,13 +87,14 @@ define Included:
 //     [Procedure: "Counseling for Nutrition"] union
 //     [Procedure: "Counseling for Physical Activity"], 12 months))
 
-// define Excluded:
+define Excluded:
   // HasAAA or // to do
   // HasHadAaaRepair // to do
+  HasHadAbdomenAortaUltrasound
 
 define InPopulation:
 //  Included and not Excluded // to do
-  Included
+  Included and not Excluded
 
 define Notification:
   if InPopulation then

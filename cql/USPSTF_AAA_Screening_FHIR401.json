@@ -76,6 +76,14 @@
             "codeSystem" : {
                "name" : "SNOMED-CT"
             }
+         }, {
+            "name" : "Ultrasound scan of abdominal aorta",
+            "id" : "241462009",
+            "display" : "Ultrasound scan of abdominal aorta (procedure)",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "name" : "SNOMED-CT"
+            }
          } ]
       },
       "contexts" : {
@@ -338,12 +346,65 @@
                } ]
             }
          }, {
+            "name" : "AbdomenAortaUltrasound",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "type" : "Query",
+               "source" : [ {
+                  "alias" : "P",
+                  "expression" : {
+                     "dataType" : "{http://hl7.org/fhir}Procedure",
+                     "templateId" : "http://hl7.org/fhir/StructureDefinition/Procedure",
+                     "codeProperty" : "code",
+                     "codeComparator" : "~",
+                     "type" : "Retrieve",
+                     "codes" : {
+                        "type" : "ToList",
+                        "operand" : {
+                           "name" : "Ultrasound scan of abdominal aorta",
+                           "type" : "CodeRef"
+                        }
+                     }
+                  }
+               } ],
+               "relationship" : [ ]
+            }
+         }, {
+            "name" : "HasHadAbdomenAortaUltrasound",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "type" : "Exists",
+               "operand" : {
+                  "name" : "AbdomenAortaUltrasound",
+                  "type" : "ExpressionRef"
+               }
+            }
+         }, {
+            "name" : "Excluded",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "name" : "HasHadAbdomenAortaUltrasound",
+               "type" : "ExpressionRef"
+            }
+         }, {
             "name" : "InPopulation",
             "context" : "Patient",
             "accessLevel" : "Public",
             "expression" : {
-               "name" : "Included",
-               "type" : "ExpressionRef"
+               "type" : "And",
+               "operand" : [ {
+                  "name" : "Included",
+                  "type" : "ExpressionRef"
+               }, {
+                  "type" : "Not",
+                  "operand" : {
+                     "name" : "Excluded",
+                     "type" : "ExpressionRef"
+                  }
+               } ]
             }
          }, {
             "name" : "Notification",
