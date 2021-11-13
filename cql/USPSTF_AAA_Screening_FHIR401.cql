@@ -74,11 +74,28 @@ define Included:
 // define HasHadAaaRepair:
   // to do
 
-define AbdomenAortaUltrasound:
+define AbdominalAortaUltrasound:
   [Procedure: "Ultrasound scan of abdominal aorta"] P
+    where P.status.value = 'completed'
 
-define HasHadAbdomenAortaUltrasound:
-  Exists(AbdomenAortaUltrasound)
+define HasHadAbdominalAortaUltrasound:
+  Exists(AbdominalAortaUltrasound)
+
+define AbdominalAortaUltrasoundServiceRequest:
+  [ServiceRequest: "Ultrasound scan of abdominal aorta"]
+
+define RecentAbdominalAortaUltrasoundServiceRequest:
+  C3F.ServiceRequestLookBack(
+    [ServiceRequest: "Ultrasound scan of abdominal aorta"] R
+      where R.status.value = 'active', 12 months)
+
+define CompletedAbdominalAortaUltrasoundServiceRequest:
+  [ServiceRequest: "Ultrasound scan of abdominal aorta"] R
+          where R.status.value = 'completed'
+
+define HasRecentOrCompletedbdomenAortaUltrasoundServiceRequest:
+  Exists(   RecentAbdominalAortaUltrasoundServiceRequest) or
+  Exists(CompletedAbdominalAortaUltrasoundServiceRequest)
 
 // Procedures must have performedDateTime or performedPeriod fields populated, otherwise ProcedureLookBack() will filter out.
 // define RecentNutritionAndActivityCounselingProcedures:
@@ -90,7 +107,8 @@ define HasHadAbdomenAortaUltrasound:
 define Excluded:
   // HasAAA or // to do
   // HasHadAaaRepair // to do
-  HasHadAbdomenAortaUltrasound
+  HasHadAbdominalAortaUltrasound or 
+  HasRecentOrCompletedbdomenAortaUltrasoundServiceRequest
 
 define InPopulation:
 //  Included and not Excluded // to do

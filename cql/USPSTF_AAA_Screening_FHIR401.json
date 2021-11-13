@@ -346,7 +346,7 @@
                } ]
             }
          }, {
-            "name" : "AbdomenAortaUltrasound",
+            "name" : "AbdominalAortaUltrasound",
             "context" : "Patient",
             "accessLevel" : "Public",
             "expression" : {
@@ -368,26 +368,177 @@
                      }
                   }
                } ],
-               "relationship" : [ ]
+               "relationship" : [ ],
+               "where" : {
+                  "type" : "Equal",
+                  "operand" : [ {
+                     "path" : "value",
+                     "type" : "Property",
+                     "source" : {
+                        "path" : "status",
+                        "scope" : "P",
+                        "type" : "Property"
+                     }
+                  }, {
+                     "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                     "value" : "completed",
+                     "type" : "Literal"
+                  } ]
+               }
             }
          }, {
-            "name" : "HasHadAbdomenAortaUltrasound",
+            "name" : "HasHadAbdominalAortaUltrasound",
             "context" : "Patient",
             "accessLevel" : "Public",
             "expression" : {
                "type" : "Exists",
                "operand" : {
-                  "name" : "AbdomenAortaUltrasound",
+                  "name" : "AbdominalAortaUltrasound",
                   "type" : "ExpressionRef"
                }
+            }
+         }, {
+            "name" : "AbdominalAortaUltrasoundServiceRequest",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "dataType" : "{http://hl7.org/fhir}ServiceRequest",
+               "templateId" : "http://hl7.org/fhir/StructureDefinition/ServiceRequest",
+               "codeProperty" : "code",
+               "codeComparator" : "~",
+               "type" : "Retrieve",
+               "codes" : {
+                  "type" : "ToList",
+                  "operand" : {
+                     "name" : "Ultrasound scan of abdominal aorta",
+                     "type" : "CodeRef"
+                  }
+               }
+            }
+         }, {
+            "name" : "RecentAbdominalAortaUltrasoundServiceRequest",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "name" : "ServiceRequestLookBack",
+               "libraryName" : "C3F",
+               "type" : "FunctionRef",
+               "operand" : [ {
+                  "type" : "Query",
+                  "source" : [ {
+                     "alias" : "R",
+                     "expression" : {
+                        "dataType" : "{http://hl7.org/fhir}ServiceRequest",
+                        "templateId" : "http://hl7.org/fhir/StructureDefinition/ServiceRequest",
+                        "codeProperty" : "code",
+                        "codeComparator" : "~",
+                        "type" : "Retrieve",
+                        "codes" : {
+                           "type" : "ToList",
+                           "operand" : {
+                              "name" : "Ultrasound scan of abdominal aorta",
+                              "type" : "CodeRef"
+                           }
+                        }
+                     }
+                  } ],
+                  "relationship" : [ ],
+                  "where" : {
+                     "type" : "Equal",
+                     "operand" : [ {
+                        "path" : "value",
+                        "type" : "Property",
+                        "source" : {
+                           "path" : "status",
+                           "scope" : "R",
+                           "type" : "Property"
+                        }
+                     }, {
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "active",
+                        "type" : "Literal"
+                     } ]
+                  }
+               }, {
+                  "value" : 12,
+                  "unit" : "months",
+                  "type" : "Quantity"
+               } ]
+            }
+         }, {
+            "name" : "CompletedAbdominalAortaUltrasoundServiceRequest",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "type" : "Query",
+               "source" : [ {
+                  "alias" : "R",
+                  "expression" : {
+                     "dataType" : "{http://hl7.org/fhir}ServiceRequest",
+                     "templateId" : "http://hl7.org/fhir/StructureDefinition/ServiceRequest",
+                     "codeProperty" : "code",
+                     "codeComparator" : "~",
+                     "type" : "Retrieve",
+                     "codes" : {
+                        "type" : "ToList",
+                        "operand" : {
+                           "name" : "Ultrasound scan of abdominal aorta",
+                           "type" : "CodeRef"
+                        }
+                     }
+                  }
+               } ],
+               "relationship" : [ ],
+               "where" : {
+                  "type" : "Equal",
+                  "operand" : [ {
+                     "path" : "value",
+                     "type" : "Property",
+                     "source" : {
+                        "path" : "status",
+                        "scope" : "R",
+                        "type" : "Property"
+                     }
+                  }, {
+                     "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                     "value" : "completed",
+                     "type" : "Literal"
+                  } ]
+               }
+            }
+         }, {
+            "name" : "HasRecentOrCompletedbdomenAortaUltrasoundServiceRequest",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "type" : "Or",
+               "operand" : [ {
+                  "type" : "Exists",
+                  "operand" : {
+                     "name" : "RecentAbdominalAortaUltrasoundServiceRequest",
+                     "type" : "ExpressionRef"
+                  }
+               }, {
+                  "type" : "Exists",
+                  "operand" : {
+                     "name" : "CompletedAbdominalAortaUltrasoundServiceRequest",
+                     "type" : "ExpressionRef"
+                  }
+               } ]
             }
          }, {
             "name" : "Excluded",
             "context" : "Patient",
             "accessLevel" : "Public",
             "expression" : {
-               "name" : "HasHadAbdomenAortaUltrasound",
-               "type" : "ExpressionRef"
+               "type" : "Or",
+               "operand" : [ {
+                  "name" : "HasHadAbdominalAortaUltrasound",
+                  "type" : "ExpressionRef"
+               }, {
+                  "name" : "HasRecentOrCompletedbdomenAortaUltrasoundServiceRequest",
+                  "type" : "ExpressionRef"
+               } ]
             }
          }, {
             "name" : "InPopulation",
