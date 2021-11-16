@@ -154,8 +154,7 @@ Here are some links to resources to help you get started:
 
  define Information: // to do
    (List{ // to do - there's more
-     if (MostRecentValidSmokingStatus is null
-         or MostRecentValidSmokingStatus = "Smoking status unknown")  
+     if TobaccoHistoryNeeded  
      then 
       'INFORMATION: Please record a tobacco history. Has this patient ever smoked?'
      else null

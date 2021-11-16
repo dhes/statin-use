@@ -685,7 +685,7 @@
                },
                "then" : {
                   "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                  "value" : "You need an abdominal aorta Ultrasound.",
+                  "value" : "You should have an abdominal aorta ultrasound.",
                   "type" : "Literal"
                },
                "else" : {
@@ -739,26 +739,8 @@
                            "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
                            "type" : "As",
                            "operand" : {
-                              "type" : "Or",
-                              "operand" : [ {
-                                 "type" : "IsNull",
-                                 "operand" : {
-                                    "name" : "MostRecentValidSmokingStatus",
-                                    "type" : "ExpressionRef"
-                                 }
-                              }, {
-                                 "type" : "Equal",
-                                 "operand" : [ {
-                                    "name" : "MostRecentValidSmokingStatus",
-                                    "type" : "ExpressionRef"
-                                 }, {
-                                    "type" : "ToConcept",
-                                    "operand" : {
-                                       "name" : "Smoking status unknown",
-                                       "type" : "CodeRef"
-                                    }
-                                 } ]
-                              } ]
+                              "name" : "TobaccoHistoryNeeded",
+                              "type" : "ExpressionRef"
                            }
                         },
                         "then" : {
