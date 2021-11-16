@@ -33,3 +33,8 @@ Milestone - on 2021-11-15 I ran the CQL serfvice against logicahealth.org and go
 }
 
             'former smoker': null
+
+2021-11-16 
+ - add test(s) to make check if most recent observation is being used in case of differently dated smoking status observations having contradictory values, e.g.
+  - add test for most recent status unknown?
+
