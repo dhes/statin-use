@@ -38,3 +38,7 @@ Milestone - on 2021-11-15 I ran the CQL serfvice against logicahealth.org and go
  - add test(s) to make check if most recent observation is being used in case of differently dated smoking status observations having contradictory values, e.g.
   - add test for most recent status unknown?
 
+2021-11-17
+  ICD10: Aneurysm abdominal (aorta) I71.4
+  SNOMEDCT: 233985008 | Abdominal aortic aneurysm (disorder) |
+  SNOMEDCT: 429205001 | History of repair of aneurysm of abdominal aorta (situation) |
