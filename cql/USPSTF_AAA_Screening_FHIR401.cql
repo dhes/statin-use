@@ -29,7 +29,7 @@ code "Smoking status unknown": '266927001' from "SNOMED-CT" display 'Tobacco smo
 code "Never smoker": '266919005' from "SNOMED-CT" display 'Never smoked tobacco (finding)'
 code "Former smoker": '8517006' from "SNOMED-CT" display 'Ex-smoker (finding)'
 code "Ultrasound scan of abdominal aorta": '241462009' from  "SNOMED-CT" display 'Ultrasound scan of abdominal aorta (procedure)'
-code "Had AAA Repair": '429205001' from "SNOMED-CT" display 'History of repair of aneurysm of abdominal aorta (situation)'
+code "Had AAA repair": '429205001' from "SNOMED-CT" display 'History of repair of aneurysm of abdominal aorta (situation)'
 
 // notes:
 // Aorta/Iliac ultrasound (limited) CPT 93979
@@ -92,14 +92,14 @@ define Included:
 define HasAAA: 
   Exists([Condition: "Has AAA"])
 
-// define HasHadAaaRepair:
-  // to do
+define HadAaaRepair:
+  Exists([Condition: "Had AAA repair"])
 
 define AbdominalAortaUltrasound:
   [Procedure: "Ultrasound scan of abdominal aorta"] P
     where P.status.value = 'completed'
 
-define HasHadAbdominalAortaUltrasound:
+define HadAbdominalAortaUltrasound:
   Exists(AbdominalAortaUltrasound)
 
 define AbdominalAortaUltrasoundServiceRequest:
@@ -127,8 +127,8 @@ define HasRecentOrCompletedbdomenAortaUltrasoundServiceRequest:
 
 define Excluded:
   HasAAA or 
-  // HasHadAaaRepair // to do
-  HasHadAbdominalAortaUltrasound or 
+  HadAaaRepair or
+  HadAbdominalAortaUltrasound or 
   HasRecentOrCompletedbdomenAortaUltrasoundServiceRequest
 
 define InPopulation:

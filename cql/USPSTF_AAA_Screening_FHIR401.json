@@ -105,7 +105,7 @@
                "name" : "SNOMED-CT"
             }
          }, {
-            "name" : "Had AAA Repair",
+            "name" : "Had AAA repair",
             "id" : "429205001",
             "display" : "History of repair of aneurysm of abdominal aorta (situation)",
             "accessLevel" : "Public",
@@ -488,6 +488,27 @@
                }
             }
          }, {
+            "name" : "HadAaaRepair",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "type" : "Exists",
+               "operand" : {
+                  "dataType" : "{http://hl7.org/fhir}Condition",
+                  "templateId" : "http://hl7.org/fhir/StructureDefinition/Condition",
+                  "codeProperty" : "code",
+                  "codeComparator" : "~",
+                  "type" : "Retrieve",
+                  "codes" : {
+                     "type" : "ToList",
+                     "operand" : {
+                        "name" : "Had AAA repair",
+                        "type" : "CodeRef"
+                     }
+                  }
+               }
+            }
+         }, {
             "name" : "AbdominalAortaUltrasound",
             "context" : "Patient",
             "accessLevel" : "Public",
@@ -529,7 +550,7 @@
                }
             }
          }, {
-            "name" : "HasHadAbdominalAortaUltrasound",
+            "name" : "HadAbdominalAortaUltrasound",
             "context" : "Patient",
             "accessLevel" : "Public",
             "expression" : {
@@ -677,10 +698,16 @@
                "operand" : [ {
                   "type" : "Or",
                   "operand" : [ {
-                     "name" : "HasAAA",
-                     "type" : "ExpressionRef"
+                     "type" : "Or",
+                     "operand" : [ {
+                        "name" : "HasAAA",
+                        "type" : "ExpressionRef"
+                     }, {
+                        "name" : "HadAaaRepair",
+                        "type" : "ExpressionRef"
+                     } ]
                   }, {
-                     "name" : "HasHadAbdominalAortaUltrasound",
+                     "name" : "HadAbdominalAortaUltrasound",
                      "type" : "ExpressionRef"
                   } ]
                }, {
