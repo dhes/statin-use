@@ -23,7 +23,6 @@ valueset CurrentTobaccoSmoker: 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1
 // [See value set in VSAC](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113762.1.4.1047.17/expansion)
 valueset HasAAA: 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1047.17'
 
-
 // Individual codes
 code "Tobacco smoking status": '72166-2' from "LOINC" display 'Tobacco smoking status'
 code "Smoking status unknown": '266927001' from "SNOMED-CT" display 'Tobacco smoking consumption unknown (finding)'
