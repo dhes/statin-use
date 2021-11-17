@@ -21,7 +21,7 @@ codesystem "ICD-10-CM": 'http://hl7.org/fhir/sid/icd-10-cm'
 // [See value set in VSAC](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.3.600.2390/expansion)
 valueset CurrentTobaccoSmoker: 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.600.2390'
 // [See value set in VSAC](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113762.1.4.1047.17/expansion)
-valueset HasAAA: 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1047.17'
+valueset "Has AAA": 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1047.17'
 
 // Individual codes
 code "Tobacco smoking status": '72166-2' from "LOINC" display 'Tobacco smoking status'
@@ -29,6 +29,7 @@ code "Smoking status unknown": '266927001' from "SNOMED-CT" display 'Tobacco smo
 code "Never smoker": '266919005' from "SNOMED-CT" display 'Never smoked tobacco (finding)'
 code "Former smoker": '8517006' from "SNOMED-CT" display 'Ex-smoker (finding)'
 code "Ultrasound scan of abdominal aorta": '241462009' from  "SNOMED-CT" display 'Ultrasound scan of abdominal aorta (procedure)'
+code "Had AAA Repair": '429205001' from "SNOMED-CT" display 'History of repair of aneurysm of abdominal aorta (situation)'
 
 // notes:
 // Aorta/Iliac ultrasound (limited) CPT 93979
@@ -79,11 +80,7 @@ define IsEverSmoker:
       or MostRecentValidSmokingStatus = "Former smoker"
   else null
 
-// redundant because we assume the most recent history is the most accurate
-// define TobaccoHistoryIsInconsistent:
-// TobaccoSmokingStatus in CurrentTobaccoSmoker and NeverSmoker
-// or
-// TobaccoSmokingStatus in CurrentTobaccoSmoker and FormerSmoker
+// We assume the most recent history is the most accurate
 
 define Included:
   IsMale
@@ -92,8 +89,8 @@ define Included:
 
 // Exclusions
 
-// define HasAAA: 
-  // to do
+define HasAAA: 
+  Exists([Condition: "Has AAA"])
 
 // define HasHadAaaRepair:
   // to do
@@ -129,7 +126,7 @@ define HasRecentOrCompletedbdomenAortaUltrasoundServiceRequest:
 //     [Procedure: "Counseling for Physical Activity"], 12 months))
 
 define Excluded:
-  // HasAAA or // to do
+  HasAAA or 
   // HasHadAaaRepair // to do
   HasHadAbdominalAortaUltrasound or 
   HasRecentOrCompletedbdomenAortaUltrasoundServiceRequest

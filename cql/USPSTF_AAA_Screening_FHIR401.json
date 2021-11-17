@@ -58,7 +58,7 @@
             "id" : "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.600.2390",
             "accessLevel" : "Public"
          }, {
-            "name" : "HasAAA",
+            "name" : "Has AAA",
             "id" : "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1047.17",
             "accessLevel" : "Public"
          } ]
@@ -100,6 +100,14 @@
             "name" : "Ultrasound scan of abdominal aorta",
             "id" : "241462009",
             "display" : "Ultrasound scan of abdominal aorta (procedure)",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "name" : "SNOMED-CT"
+            }
+         }, {
+            "name" : "Had AAA Repair",
+            "id" : "429205001",
+            "display" : "History of repair of aneurysm of abdominal aorta (situation)",
             "accessLevel" : "Public",
             "codeSystem" : {
                "name" : "SNOMED-CT"
@@ -462,6 +470,24 @@
                } ]
             }
          }, {
+            "name" : "HasAAA",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "type" : "Exists",
+               "operand" : {
+                  "dataType" : "{http://hl7.org/fhir}Condition",
+                  "templateId" : "http://hl7.org/fhir/StructureDefinition/Condition",
+                  "codeProperty" : "code",
+                  "codeComparator" : "in",
+                  "type" : "Retrieve",
+                  "codes" : {
+                     "name" : "Has AAA",
+                     "type" : "ValueSetRef"
+                  }
+               }
+            }
+         }, {
             "name" : "AbdominalAortaUltrasound",
             "context" : "Patient",
             "accessLevel" : "Public",
@@ -649,8 +675,14 @@
             "expression" : {
                "type" : "Or",
                "operand" : [ {
-                  "name" : "HasHadAbdominalAortaUltrasound",
-                  "type" : "ExpressionRef"
+                  "type" : "Or",
+                  "operand" : [ {
+                     "name" : "HasAAA",
+                     "type" : "ExpressionRef"
+                  }, {
+                     "name" : "HasHadAbdominalAortaUltrasound",
+                     "type" : "ExpressionRef"
+                  } ]
                }, {
                   "name" : "HasRecentOrCompletedbdomenAortaUltrasoundServiceRequest",
                   "type" : "ExpressionRef"
