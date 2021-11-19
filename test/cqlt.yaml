@@ -2,6 +2,9 @@
 library:
   name: USPSTF_Abdominal_Aortic_Aneurysm_Screening_FHIRv401
   paths: ../cql
+hook:
+  id: aaa-screening
+  pmTestGenSupport: pm-test-gen.js
 tests:
   path: cases
 options:
