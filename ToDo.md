@@ -1,44 +1,153 @@
-https://launch.smarthealthit.org/v/r4/fhir
+logigahealth patient Stephen A Lewis has a blank aaa card. It should show that he needs a tobacco history. Similar for frank v taylor and Joshua P Williams. Oddly, Robert P Hill passes the same test. 
 
-to do - make a more meaningful card for ‘smoking status unknown’
-		if smoking status is unknown the card returns nothting
-    presently if there is no smoking status it will say so
-    but if there is an observation ‘smoking status unknown’ it is silent. 
-	incorporate ‘never smoker’ into card
-		if never smoker lets make the card say no testing is needed
-	add logic in cql for former smoker
-		add codeset and logic so that former smoking status is repeated back and test is recommended
-    right now it only triggers on current smokers
-  add a short phrase "no testing is needed" or "abdominal aorta ultrasound recommended"
-
-Milestone - on 2021-11-15 I ran the CQL serfvice against logicahealth.org and got expected responses. 
-            Why do I only get the first 50 observations? Pagination? How to override?
-            'status unknown': null
-
-            'light smoker': {
-  "cards": [
-    {
-      "summary": "Screening for abdominal aortic aneurysm in men who ever smoked",
-      "indicator": "info",
-      "detail": "Experts (i.e., [The U.S. Preventive Services Task Force](https://www.uspreventiveservicestaskforce.org/Page/Name/about-the-uspstf)) find that men your age that ever smoked should have an ultrasound performed on their aorta to make sure there is not aneurysm.\n\nHere are some links to resources to help you get started:\n\n* [The U.S. Preventive Services Task Force Recommendation on “Abdominal Aortic Aneurysm: Screening”](ttps://www.uspreventiveservicestaskforce.org/uspstf/recommendation/abdominal-aortic-aneurysm-screening)",
-      "source": {
-        "label": "USPSTF Abdominal Aortic Aneurysm: Screening",
-        "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/abdominal-aortic-aneurysm-screening"
-      },
-      "extension": {
-        "information": []
-      }
+Hill: 
+ {
+          "fullUrl": "https://api.logicahealth.org/DansCDSHooksAPIGuide/data/Observation/smart-smokingstatus-18",
+          "resource": {
+            "resourceType": "Observation",
+            "id": "smart-smokingstatus-18",
+            "meta": {
+              "versionId": "4",
+              "lastUpdated": "2021-11-16T21:32:13.000+00:00",
+              "source": "#6HFII80SjriAIzzL"
+            },
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Tobacco smoking status: Unknown if ever smoked</div>"
+            },
+            "identifier": [
+              {
+                "use": "official",
+                "system": "http://www.bmc.nl/zorgportal/identifiers/observations",
+                "value": "smart-18"
+              }
+            ],
+            "status": "final",
+            "category": [
+              {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                    "code": "social-history",
+                    "display": "Social History"
+                  }
+                ],
+                "text": "Social History"
+              }
+            ],
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "72166-2",
+                  "display": "Tobacco smoking status"
+                }
+              ],
+              "text": "Tobacco smoking status"
+            },
+            "subject": {
+              "reference": "Patient/smart-1098667"
+            },
+            "effectiveDateTime": "2016-02-05",
+            "performer": [
+              {
+                "reference": "Practitioner/smart-Practitioner-71081332"
+              }
+            ],
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "266927001",
+                  "display": "Tobacco smoking consumption unknown (finding)"
+                }
+              ],
+              "text": "Tobacco smoking consumption unknown (finding)"
+            }
+          },
+          "search": {
+            "mode": "match"
+          }
+        }
+      ]
     }
-  ]
-}
 
-            'former smoker': null
+Williams: 
+{
+          "fullUrl": "https://api.logicahealth.org/DansCDSHooksAPIGuide/data/Observation/smart-smokingstatus-45",
+          "resource": {
+            "resourceType": "Observation",
+            "id": "smart-smokingstatus-45",
+            "meta": {
+              "versionId": "1",
+              "lastUpdated": "2020-07-15T02:51:36.000+00:00",
+              "source": "#cdCgXxWeLGLEFp8f"
+            },
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Tobacco smoking status: Unknown if ever smoked</div>"
+            },
+            "identifier": [
+              {
+                "use": "official",
+                "system": "http://www.bmc.nl/zorgportal/identifiers/observations",
+                "value": "smart-45"
+              }
+            ],
+            "status": "final",
+            "category": [
+              {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                    "code": "social-history",
+                    "display": "Social History"
+                  }
+                ],
+                "text": "Social History"
+              }
+            ],
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "72166-2",
+                  "display": "Tobacco smoking status"
+                }
+              ],
+              "text": "Tobacco smoking status"
+            },
+            "subject": {
+              "reference": "Patient/smart-1137192"
+            },
+            "effectiveDateTime": "2016-07-31",
+            "performer": [
+              {
+                "reference": "Practitioner/smart-Practitioner-72080416"
+              }
+            ],
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "266927001",
+                  "display": "Unknown if ever smoked"
+                }
+              ],
+              "text": "Unknown if ever smoked"
+            }
+          },
+          "search": {
+            "mode": "match"
+          }
+        }
+      ]
+    },
 
-2021-11-16 
- - add test(s) to make check if most recent observation is being used in case of differently dated smoking status observations having contradictory values, e.g.
-  - add test for most recent status unknown?
+The difference is the display value of the code. Maybe I need to change the cql from: 
 
-2021-11-17
-  ICD10: Aneurysm abdominal (aorta) I71.4
-  SNOMEDCT: 233985008 | Abdominal aortic aneurysm (disorder) |
-  SNOMEDCT: 429205001 | History of repair of aneurysm of abdominal aorta (situation) |
+  MostRecentValidSmokingStatus = "Smoking status unknown"
+
+to
+
+  MostRecentValidSmokingStatus ~ "Smoking status unknown"
