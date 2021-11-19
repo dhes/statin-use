@@ -1,4 +1,4 @@
-name: candidate_smoking_status_expressly_unknown
+name: candidate_smoking_status_expressly_unknown_nonmatching_display_value
 data:
   - resourceType: Patient
     name: Joe Smith
@@ -9,7 +9,7 @@ data:
     birthDate: 1951-11-10
   - resourceType: Observation
     code: 'LOINC#72166-2 Tobacco smoking status'
-    valueCodeableConcept: 'SNOMEDCT#266927001 Tobacco smoking consumption unknown (finding)'
+    valueCodeableConcept: 'SNOMEDCT#266927001 unknown'
     issued: 2019-04-05T00:00:00.000Z
 results:
   Notification: null
