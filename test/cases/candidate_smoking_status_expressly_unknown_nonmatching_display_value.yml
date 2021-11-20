@@ -9,7 +9,7 @@ data:
     birthDate: 1951-11-10
   - resourceType: Observation
     code: 'LOINC#72166-2 Tobacco smoking status'
-# the following display value is non-standard but should stall pass
+# the following display value is non-standard but should still pass
     valueCodeableConcept: 'SNOMEDCT#266927001 unknown'
     issued: 2019-04-05T00:00:00.000Z
 results:

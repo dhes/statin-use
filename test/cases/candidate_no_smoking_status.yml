@@ -10,3 +10,5 @@ data:
 results:
   Notification: null
   Recommendation: null
+  Information: >-
+    INFORMATION: Please record a tobacco history. Has this patient ever smoked?

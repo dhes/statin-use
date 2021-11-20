@@ -51,7 +51,7 @@ define Is65Through75YearsOld:
 
 define IsMale: 
   if Patient.gender.value is not null 
-    then Patient.gender.value = 'male' 
+    then Patient.gender.value = 'male' // or Patient.gender ~ 'male' ?
   else null
 
 // <http://www.hl7.org/fhir/us/core/StructureDefinition-us-core-smokingstatus.html>
@@ -66,7 +66,7 @@ define TobaccoSmokingStatus:
 
 define FormerSmoker:
   if MostRecentValidSmokingStatus is not null
-    then MostRecentValidSmokingStatus = "Former smoker"
+    then MostRecentValidSmokingStatus = "Former smoker" // or ~ "Former smoker"?
   else null
 
 define TobaccoHistoryNeeded:
@@ -77,7 +77,7 @@ define IsEverSmoker:
   if MostRecentValidSmokingStatus is not null  
     then 
       MostRecentValidSmokingStatus in CurrentTobaccoSmoker
-      or MostRecentValidSmokingStatus = "Former smoker"
+      or MostRecentValidSmokingStatus = "Former smoker" // see above, or ~ "Former smoker"
   else null
 
 // We assume the most recent history is the most accurate
@@ -97,7 +97,7 @@ define HadAaaRepair:
 
 define AbdominalAortaUltrasound:
   [Procedure: "Ultrasound scan of abdominal aorta"] P
-    where P.status.value = 'completed'
+    where P.status.value = 'completed' // ??? P.status ~ 'completed'
 
 define HadAbdominalAortaUltrasound:
   Exists(AbdominalAortaUltrasound)

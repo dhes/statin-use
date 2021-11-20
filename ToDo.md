@@ -151,3 +151,5 @@ The difference is the display value of the code. Maybe I need to change the cql 
 to
 
   MostRecentValidSmokingStatus ~ "Smoking status unknown"
+
+  ??? replace .value  = ... with ~ ...
