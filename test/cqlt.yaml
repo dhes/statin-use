@@ -1,9 +1,9 @@
 ---
 library:
-  name: USPSTF_Abdominal_Aortic_Aneurysm_Screening_FHIRv401
+  name: USPSTF_Statin_Use_for_Primary_Prevention_of_CVD_in_Adults_FHIRv401
   paths: ../cql
 hook:
-  id: aaa-screening
+  id: statin-use
   pmTestGenSupport: pm-test-gen.js
 tests:
   path: cases
