@@ -1,11 +1,3 @@
 - create troubleshooting card to expose inclusion and exclusion details for statin-us, like
 
-//pseudocode?
-define InclustionCriteria: 
-  List{
-    if MostRecentValidLDLResult > 130 'mg/dL' then '- Most recent LDL > 130' else null, 
-    if MostRecentValidHDLResult < 40 'mg/dL' then '- Most recent HDL < 40' else null,
-    if HasDiabetes then '- Has diabetes' else null,
-    if HasHypertension then '- Has hypertension' else null,
-    if IsSmoker then 'Is a smoker' else null
-  }
+- strictly speaking HasMissingOrOldData doesn't need to trigger if IsSmoker is null as long as one of the other three risk factors is not null. On the other hand, don't you want to take a smoking history?
