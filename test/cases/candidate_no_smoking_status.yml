@@ -8,7 +8,9 @@ data:
 # ...age 60 years. 
     birthDate: 1951-11-10
 results:
-  Notification: null
   Recommendation: null
-  Information: >-
-    INFORMATION: Please record a tobacco history. Has this patient ever smoked?
+  NeedMoreInformation: |-
+    - LDL cholesterol within the last six years
+    - HDL cholesterol within the last six years
+    - ASCVD Risk Assessment within the last six years
+    - Tobacco smoking status within the last year
