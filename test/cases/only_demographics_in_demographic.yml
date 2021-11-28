@@ -1,4 +1,4 @@
-name: candidate_no_smoking_status
+name: only_demographics_in_demographic
 data:
   - resourceType: Patient
     name: Joe Smith
@@ -8,7 +8,7 @@ data:
 # ...age 60 years. 
     birthDate: 1951-11-10
 results:
-  Recommendation: null
+  YesRecommendation: null
   NeedMoreInformation: |-
     - LDL cholesterol within the last six years
     - HDL cholesterol within the last six years
