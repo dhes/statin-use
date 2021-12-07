@@ -276,6 +276,7 @@ define MostRecentValidSmokingStatus:
 define IsSmoker:
   if MostRecentValidSmokingStatus is null then null
   else MostRecentValidSmokingStatus in "Current Tobacco Smoker"
+  // DH I have a problem with this because if the most recent status is "unknown" (which is not in "Current Tobacco Smoker" then this logic assigns the patient as a non-smoker, which we don't really know, right?)
 
 // The most recent verified (final or amended) ACC/AHA CVD Risk Assessment.  Note that although FHIR R4 has a
 // RiskAssessment resource, we've chosen to use Observation.  This is because RiskAssessment is at maturity level 1
