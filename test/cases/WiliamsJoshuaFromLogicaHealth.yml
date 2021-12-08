@@ -21,11 +21,12 @@ data:
     issued: 2021-04-05T00:00:00.000Z
   - resourceType: Observation
     code: 'LOINC#72166-2 Tobacco Smoking Status'
-    valueCodeableConcept: 'SNOMEDCT#266927001 Unknown if ever smoked'
+    valueCodeableConcept: 'SNOMEDCT#266927001 Tobacco smoking consumption unknown (finding)'
     issued: 2021-04-05T00:00:00.000Z
 results:
   YesRecommendation: |-
     Start low to moderate intensity lipid lowering therapy based on outcome of shared decision making between patient and provider
   # see todo.md re smoking status 'unknown'
   # this line really should yield - Tobacco smoking status within the last year
-  NeedMoreInformation: null
+  NeedMoreInformation: |-
+    - Tobacco smoking status within the last year
