@@ -116,8 +116,10 @@ define Recommendation:
   case
     when ShouldStartStatin then 'Start low to moderate intensity lipid lowering therapy based on outcome of shared decision making between patient and provider'
     when ShouldDiscussStatin then 'Discuss initiation of low to moderate intensity lipid lowering therapy'
-    when not MeetsInclusionCriteria then 'No USPSTF recommendation provided, as patient does not meet inclusion criteria'
-    when MeetsExclusionCriteria then 'No USPSTF recommendation provided, as patient meets exclusion criteria'
+    // before - when not MeetsInclusionCriteria then 'No USPSTF recommendation provided, as patient does not meet inclusion criteria'
+    when not MeetsInclusionCriteria then 'statin therapy not recommended, as patient does not meet inclusion criteria'
+    // before - when MeetsExclusionCriteria then 'No USPSTF recommendation provided, as patient meets exclusion criteria'
+    when MeetsExclusionCriteria then 'statin therapy not recommended, as patient meets exclusion criteria'
     else null
   end
 
