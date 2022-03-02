@@ -1,4 +1,4 @@
-name: not_included_too_young
+name: edit_me_not_included_too_young
 data:
   - resourceType: Patient
     name: Joe Smith
@@ -8,6 +8,4 @@ data:
 # ...age 65 years minus 1 day.
     birthDate: 1956-11-11
 results:
-  Notification: null
   Recommendation: null
-  Information: null

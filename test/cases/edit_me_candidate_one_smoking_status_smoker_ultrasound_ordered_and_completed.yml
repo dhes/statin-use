@@ -1,4 +1,4 @@
-name: candidate_one_smoking_status_smoker_ultrasound_ordered_and_completed
+name: edit_me_candidate_one_smoking_status_smoker_ultrasound_ordered_and_completed
 data:
   - resourceType: Patient
     name: Joe Smith
@@ -16,5 +16,4 @@ data:
     status: completed
     authoredOn: 2018-11-02T00:00:00.000Z
 results:
-  Notification: null
   Recommendation: null

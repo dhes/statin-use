@@ -1,4 +1,4 @@
-name: candidate_one_smoking_status_smoker_ultrasound_ordered_recently
+name: edit_me_candidate_one_smoking_status_smoker_ultrasound_ordered_recently
 data:
   - resourceType: Patient
     name: Joe Smith
@@ -17,6 +17,4 @@ data:
 # edit next line to make < 12 months ago. 
     authoredOn: 2021-11-02T00:00:00.000Z
 results:
-  Notification: null
   Recommendation: null
-  Information: null
