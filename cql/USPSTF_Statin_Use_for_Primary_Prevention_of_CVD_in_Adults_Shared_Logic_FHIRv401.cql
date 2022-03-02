@@ -215,7 +215,7 @@ context Patient
 // Determines if patient's age, in years, at the time CQL is run, is within the limits defined by the USPSTF
 // recommendation (40 years - 75 years inclusive). **NOTE**: The CQL 'between' operator is inclusive.
 define InDemographic:
-  AgeInYears() between 40 and 75
+  AgeInYears() between 40 and 75 //inclusive
 
 // The most recent verified (final or amended) LDL test.
 define MostRecentLDLTest:

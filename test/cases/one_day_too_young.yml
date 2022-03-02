@@ -1,0 +1,9 @@
+name: one_day_too_young
+data:
+  - resourceType: Patient
+    name: Joe Smith
+    gender: male
+    birthDate: 1982-01-01
+results:
+  Recommendation: 'Statin therapy not recommended, as patient does not meet inclusion criteria'
+  NeedMoreInformation: null

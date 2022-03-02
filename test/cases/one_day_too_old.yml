@@ -1,4 +1,4 @@
-name: edit_me_not_included_too_old
+name: one_day_too_old
 data:
   - resourceType: Patient
     name: Joe Smith
@@ -6,6 +6,7 @@ data:
 # Unless today is 2021-11-10
 # ...please adjust the birthdate to make this patient's   
 # ...age 76 years.
-    birthDate: 1945-11-09
+    birthDate: 1945-12-31
 results:
-  Recommendation: null
+  Recommendation: 'Statin therapy not recommended, as patient does not meet inclusion criteria'
+  NeedMoreInformation: null

@@ -1,0 +1,9 @@
+name: just_old_enough
+data:
+  - resourceType: Patient
+    name: Jim Jones
+    gender: male
+    birthDate: 1981-12-31
+results:
+  Recommendation: null
+  NeedMoreInformation: $should exist

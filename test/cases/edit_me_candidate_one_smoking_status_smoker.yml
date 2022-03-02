@@ -12,4 +12,4 @@ data:
     valueCodeableConcept: 'SNOMEDCT#65568007 Cigarette smoker (finding)'
     issued: 2019-04-05T00:00:00.000Z
 results:
-  Recommendation: no null
+  Recommendation: not null

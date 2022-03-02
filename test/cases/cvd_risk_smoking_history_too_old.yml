@@ -1,0 +1,18 @@
+name: cvd_risk_smoking_history_too_old
+data:
+  - resourceType: Patient
+    name: Joe Smith
+    gender: male
+#   57 1/2 years old 
+    birthDate: 1963-05-31
+  - resourceType: Observation
+    code: 'LOINC#72166-2 Tobacco smoking status'
+    valueCodeableConcept: 'SNOMEDCT#65568007 Cigarette smoker (finding)'
+    issued: 2015-12-30T00:00:00.00-10:00
+results:
+  Recommendation: null
+  NeedMoreInformation: |-
+    - LDL cholesterol within the last six years
+    - HDL cholesterol within the last six years
+    - ASCVD Risk Assessment within the last six years
+    - Tobacco smoking status within the last six years
