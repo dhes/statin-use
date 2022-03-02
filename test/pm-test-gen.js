@@ -11,12 +11,12 @@ function expectCards(testCase) {
 function expectCardsContent(testCase) {
   if (expectCards(testCase)) {
     return {
-      summary: 'My CDS Hook Summary',
+      summary: 'Statin Use for the Primary Prevention of CVD',
       indicator: 'info',
       detail: testCase.expected.Recommendation,
       source: {
-        label: 'My CDS Source',
-        url: 'https://www.example.org/my-cds-source'
+        label: 'CDS Connect: Statin Use for the Primary Prevention of CVD in Adults',
+        url: 'https://cds.ahrq.gov/cdsconnect/artifact/statin-use-primary-prevention-cvd-adults'
       }
     };
   }
