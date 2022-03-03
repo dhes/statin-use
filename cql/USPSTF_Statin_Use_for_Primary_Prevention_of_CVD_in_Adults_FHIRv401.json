@@ -797,7 +797,7 @@
                            "operand" : {
                               "type" : "IsNull",
                               "operand" : {
-                                 "name" : "MostRecentValidCVDRiskAssessmentResult",
+                                 "name" : "IsSmoker",
                                  "libraryName" : "SharedLogic",
                                  "type" : "ExpressionRef"
                               }
@@ -805,7 +805,7 @@
                         },
                         "then" : {
                            "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                           "value" : "- ASCVD Risk Assessment within the last six years",
+                           "value" : "- Tobacco smoking status within the last six years",
                            "type" : "Literal"
                         },
                         "else" : {
@@ -823,7 +823,7 @@
                            "operand" : {
                               "type" : "IsNull",
                               "operand" : {
-                                 "name" : "IsSmoker",
+                                 "name" : "MostRecentValidCVDRiskAssessmentResult",
                                  "libraryName" : "SharedLogic",
                                  "type" : "ExpressionRef"
                               }
@@ -831,7 +831,7 @@
                         },
                         "then" : {
                            "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                           "value" : "- Tobacco smoking status within the last six years",
+                           "value" : "- ASCVD Risk Assessment within the last six years",
                            "type" : "Literal"
                         },
                         "else" : {

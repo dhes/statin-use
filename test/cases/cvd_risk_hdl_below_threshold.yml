@@ -1,0 +1,22 @@
+name: cvd_risk_hdl_below_threshold
+# Remenber HDL below (not above) threshold of 40 is a CVD risk factor
+data:
+  - resourceType: Patient
+    name: Joe Smith
+    gender: male
+# 57 1/2 years old
+    birthDate: 1963-05-31
+  - resourceType: Observation
+    code: 'LOINC#2085-9 Cholesterol in HDL [Mass/volume] in Serum or Plasma'
+    valueQuantity: 39 mg/dL
+# six years ago to the day
+    issued: 2015-12-31T00:00:00-10:00
+results:
+  YesRecommendation: null
+  # This will pass but it's wrong:
+  # NeedMoreInformation: |-
+  #   - LDL cholesterol within the last six years
+  #   - Tobacco smoking status within the last year
+  #   - ASCVD Risk Assessment within the last six years
+  NeedMoreInformation: |-
+    - ASCVD Risk Assessment within the last six years

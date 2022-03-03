@@ -17,6 +17,7 @@ results:
   # this would pass: 
   # NeedMoreInformation: |-
   #   - HDL cholesterol within the last six years
-  #   - ASCVD Risk Assessment within the last six years
   #   - Tobacco smoking status within the last year
-  NeedMoreInformation: null
+  #   - ASCVD Risk Assessment within the last six years
+  NeedMoreInformation: |-
+    - ASCVD Risk Assessment within the last six years
