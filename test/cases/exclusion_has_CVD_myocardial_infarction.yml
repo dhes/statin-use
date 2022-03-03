@@ -1,0 +1,16 @@
+name: exclusion_has_CVD_myocardial_infarction
+data:
+  - resourceType: Patient
+    name: Joe Smith
+    gender: male
+# 57 1/2 years old
+    birthDate: 1963-05-31
+  - resourceType: Condition
+    verificationStatue: confirmed
+    # any status applies
+    # as of 2022-03-03 the ICD10 codes in the MI and AMI valuesets are the same
+    # this SNOMED code is only in the MI set
+    code: 'SNOMEDCT#129574000 Postoperative myocardial infarction'
+results:
+  YesRecommendation: null
+  NeedMoreInformation: null

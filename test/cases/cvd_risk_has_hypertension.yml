@@ -9,7 +9,7 @@ data:
   - resourceType: Condition
     verificationStatue: confirmed
     clinicalStatus: active
-    code: 'I10 Essential (primary) hypertension'
+    code: 'ICD10CM#I10 Essential (primary) hypertension'
 results:
   YesRecommendation: null
   # This would incorrectly pass:

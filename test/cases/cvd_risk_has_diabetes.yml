@@ -9,7 +9,7 @@ data:
   - resourceType: Condition
     verificationStatue: confirmed
     clinicalStatus: active
-    code: 'E11.9 Type 2 diabetes mellitus without complications'
+    code: 'ICD10CM#E11.9 Type 2 diabetes mellitus without complications'
 results:
   YesRecommendation: null
   # This would incorrectly pass:
