@@ -1,0 +1,13 @@
+name: exclusion_has_had_CVD_procedure
+data:
+  - resourceType: Patient
+    name: Joe Smith
+    gender: male
+# 57 1/2 years old
+    birthDate: 1963-05-31
+  - resourceType: Procedure
+    status: completed
+    code: 'SNOMEDCT#90487008 Aortocoronary bypass of two coronary arteries'
+results:
+  YesRecommendation: null
+  NeedMoreInformation: null
