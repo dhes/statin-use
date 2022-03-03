@@ -1,0 +1,19 @@
+name: ascvd_risk_percent_at_threshold
+# calculated 10-year CVD event risk of 10% or greater, no more than 6 years old
+data:
+  - resourceType: Patient
+    name: Joe Smith
+    gender: male
+# 57 1/2 years old
+    birthDate: 1963-05-31
+  - resourceType: Observation
+    code: '79423-0 Cardiovascular disease 10Y risk [Likelihood] ACC-AHA Pooled Cohort by Goff 2013'
+    valueQuantity: 10.0 %
+# six years ago to the day
+    issued: 2015-12-31T00:00:00-10:00
+results:
+  YesRecommendation: null
+  NeedMoreInformation: |-
+    - LDL cholesterol within the last six years
+    - HDL cholesterol within the last six years
+    - Tobacco smoking status within the last year
