@@ -1,0 +1,22 @@
+name: cvd_risk_has_diabetes
+# diabetes is a CVD risk factor
+data:
+  - resourceType: Patient
+    name: Joe Smith
+    gender: male
+# 57 1/2 years old
+    birthDate: 1963-05-31
+  - resourceType: Condition
+    verificationStatue: confirmed
+    clinicalStatus: active
+    code: 'E11.9 Type 2 diabetes mellitus without complications'
+results:
+  YesRecommendation: null
+  # This would incorrectly pass:
+  # NeedMoreInformation: |-
+  #   - LDL cholesterol within the last six years
+  #   - HDL cholesterol within the last six years
+  #   - Tobacco smoking status within the last year
+  #   - ASCVD Risk Assessment within the last six years
+  NeedMoreInformation: |-
+    - ASCVD Risk Assessment within the last six years
