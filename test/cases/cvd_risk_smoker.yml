@@ -11,8 +11,11 @@ data:
     issued: 2018-10-02T00:00:00.00-10:00
 results:
   Recommendation: null
-# see ToDo.md. NeedMoreInformation should be null because you only need on risk factor to be included
+# This fails for a reason. If you smoke the algo doesn't care about LDL, or HDL. 
+# This would pass: 
+# NeedMoreInformation: |-
+#   - LDL cholesterol within the last six years
+#   - HDL cholesterol within the last six years
+#   - ASCVD Risk Assessment within the last six years
   NeedMoreInformation: |-
-    - LDL cholesterol within the last six years
-    - HDL cholesterol within the last six years
     - ASCVD Risk Assessment within the last six years

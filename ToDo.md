@@ -4,4 +4,4 @@
 
 - see comment tagged with DH where a smoking status of unknown can result in a patient being labelle a non-smoker.
 
-- if there is any CVD risk factor present you don't need to gather any more risk-factor information so NeedMoreInformation should be null. Example - if smoking status is 'smoker' then you don't need HDL, LDL or CVD risk assessment. 
+- if there is any CVD risk factor present you don't need to gather any more risk-factor information so NeedMoreInformation should be null. Example - if smoking status is 'smoker' then you don't need HDL or LDL. Somewhat conterintuitively, ASCVD risk is not treated as a "CVD risk factor". 

@@ -1,16 +1,16 @@
-name: only_LDLc
+# LDLc means calculated LDL, the most common of the LDLs measured. 
+name: cvd_risk_ldlc_below_threshold
 data:
   - resourceType: Patient
     name: Joe Smith
     gender: male
-# Unless today is 2021-11-10
-# ...please adjust the birthdate to make this patient's   
-# ...age 60 years. 
-    birthDate: 1951-11-10
+# 57 1/2 years old
+    birthDate: 1963-05-31
   - resourceType: Observation
     code: 'LOINC#13457-7 Cholesterol in LDL Calc [Mass/Vol]'
     valueQuantity: 130 mg/dL
-    issued: 2021-04-05T00:00:00.000Z
+# three years ago hawaii time
+    issued: 2018-12-31T00:00:00-10:00
 results:
   YesRecommendation: null
   NeedMoreInformation: |-

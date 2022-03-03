@@ -1,0 +1,20 @@
+# LDLc means calculated LDL, the most common of the LDLs measured. 
+name: cvd_risk_ldlc_too_old
+data:
+  - resourceType: Patient
+    name: Joe Smith
+    gender: male
+# 57 1/2 years old
+    birthDate: 1963-05-31
+  - resourceType: Observation
+    code: 'LOINC#13457-7 Cholesterol in LDL Calc [Mass/Vol]'
+    valueQuantity: 131 mg/dL
+# three years ago hawaii time
+    issued: 2015-12-30T00:00:00-10:00
+results:
+  YesRecommendation: null
+  NeedMoreInformation: |-
+    - LDL cholesterol within the last six years
+    - HDL cholesterol within the last six years
+    - ASCVD Risk Assessment within the last six years
+    - Tobacco smoking status within the last year
