@@ -1,0 +1,16 @@
+name: exclusion_is_on_statin_medicationDispensed
+data:
+  - resourceType: Patient
+    name: Joe Smith
+    gender: male
+# 57 1/2 years old
+    birthDate: 1963-05-31
+  - resourceType: MedicationDispensed
+    status: completed
+    # handed over or prepared within the last two years
+    whenHandedOver: 2020-12-31
+    whenPrepared: 2020-12-31
+    code: 'RXNORM#859751 rosuvastatin calcium 20 MG Oral Tablet'
+results:
+  YesRecommendation: null
+  NeedMoreInformation: null

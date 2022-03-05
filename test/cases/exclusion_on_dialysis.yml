@@ -1,0 +1,15 @@
+name: exclusion_on_dialysis
+data:
+  - resourceType: Patient
+    name: Joe Smith
+    gender: male
+# 57 1/2 years old
+    birthDate: 1963-05-31
+  - resourceType: Procedure
+    status: completed
+    # within the last week
+    peformedDateTime: 2021-12-29
+    code: 'CPD#90935 Hemodialysis procedure with single physician evaluation'
+results:
+  YesRecommendation: null
+  NeedMoreInformation: null

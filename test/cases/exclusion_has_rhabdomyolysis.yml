@@ -1,0 +1,15 @@
+name: exclusion_has_rhabdomyolysis
+# diabetes is a CVD risk factor
+data:
+  - resourceType: Patient
+    name: Joe Smith
+    gender: male
+# 57 1/2 years old
+    birthDate: 1963-05-31
+  - resourceType: Condition
+    verificationStatus: confirmed
+    clinicalStatus: active
+    code: 'ICD10CM#M62.82 Rhabdomyolysis'
+results:
+  YesRecommendation: null
+  NeedMoreInformation: null
