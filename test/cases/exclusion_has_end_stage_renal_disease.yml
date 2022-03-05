@@ -1,0 +1,15 @@
+name: exclusion_has_end_stage_renal_disease
+data:
+  - resourceType: Patient
+    name: Jane Smith
+    gender: female
+# 57 years old on 2021-12-31
+    birthDate: 1964-12-31
+  - resourceType: Condition
+    verificationStatus: confirmed
+    clinicalStatus: active
+    # abatement: null
+    code: 'ICD10CM#N18.8 End stage renal disease'
+results:
+  YesRecommendation: null
+  NeedMoreInformation: null

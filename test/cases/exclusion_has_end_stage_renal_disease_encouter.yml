@@ -1,0 +1,17 @@
+name: exclusion_has_end_stage_renal_disease_encouter
+data:
+  - resourceType: Patient
+    name: Jane Smith
+    gender: female
+# 57 years old on 2021-12-31
+    birthDate: 1964-12-31
+  - resourceType: Encounter
+    reasonCode: 'CPT#90963 End-Stage Renal Disease Services'
+    status: finished
+    # encounter within the past month of 2021-12-15
+    period: 
+      start: '2021-12-15'
+      end: '2021-12-15'
+results:
+  YesRecommendation: null
+  NeedMoreInformation: null
