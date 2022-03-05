@@ -8,7 +8,7 @@ data:
   - resourceType: MedicationStatement
     status: active
     # effective date within the last two years
-    effective: 2020-12-31
+    effectiveDateTime: 2020-12-31
     code: 'RXNORM#859751 rosuvastatin calcium 20 MG Oral Tablet'
 results:
   YesRecommendation: null

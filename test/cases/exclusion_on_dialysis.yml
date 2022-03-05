@@ -8,7 +8,7 @@ data:
   - resourceType: Procedure
     status: completed
     # within the last week
-    peformedDateTime: 2021-12-29
+    performedDateTime: 2021-12-29
     code: 'CPD#90935 Hemodialysis procedure with single physician evaluation'
 results:
   YesRecommendation: null

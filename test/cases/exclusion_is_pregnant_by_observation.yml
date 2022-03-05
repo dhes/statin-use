@@ -8,7 +8,7 @@ data:
   - resourceType: Observation
     status: final
     code: 'LOINC#2810-3 Pregnancy Status'
-    valuelCodeableConcept: 'LOINC#LA15173-0 Pregnant'
+    valueCodeableConcept: 'LOINC#LA15173-0 Pregnant'
 # three months pregnant on 2021-12-31
     effectiveDateTime: 2021-09-30T00:00:00-10:00
 results:
