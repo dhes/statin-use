@@ -7,6 +7,7 @@ data:
 # 57 1/2 years old
     birthDate: 1963-05-31
   - resourceType: Observation
+    status: final
     code: '79423-0 Cardiovascular disease 10Y risk [Likelihood] ACC-AHA Pooled Cohort by Goff 2013'
     valueQuantity: 9.9 %
 # six years ago to the day

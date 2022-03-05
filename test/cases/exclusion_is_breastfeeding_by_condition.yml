@@ -1,0 +1,15 @@
+name: exclusion_is_breastfeeding_by_condition
+data:
+  - resourceType: Patient
+    name: Jane Smith
+    gender: female
+# 41 years old on 2021-12-31
+    birthDate: 1980-12-31
+  - resourceType: Condition
+    verificationStatus: confirmed
+    clinicalStatus: active
+    # abatement: null
+    code: 'ICD10CM#Z39.1 Encounter for care and examination of lactating mother'
+results:
+  YesRecommendation: null
+  NeedMoreInformation: null

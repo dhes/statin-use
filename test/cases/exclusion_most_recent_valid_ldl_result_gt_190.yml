@@ -1,5 +1,5 @@
 # LDLc means calculated LDL, the most common of the LDLs measured. 
-name: cvd_risk_ldlc_below_threshold
+name: exclusion_most_recent_valid_ldl_result_gt_190
 data:
   - resourceType: Patient
     name: Joe Smith
@@ -9,12 +9,15 @@ data:
   - resourceType: Observation
     status: final
     code: 'LOINC#13457-7 Cholesterol in LDL Calc [Mass/Vol]'
-    valueQuantity: 130 mg/dL
+    valueQuantity: 190 mg/dL
 # three years ago hawaii time
+    issued: 2018-12-31T00:00:00-10:00
+  - resourceType: Observation
+    status: final
+    code: 'LOINC#13457-7 Cholesterol in LDL Calc [Mass/Vol]'
+    valueQuantity: 191 mg/dL
+# two years ago hawaii time
     issued: 2018-12-31T00:00:00-10:00
 results:
   YesRecommendation: null
-  NeedMoreInformation: |-
-    - HDL cholesterol within the last six years
-    - Tobacco smoking status within the last year
-    - ASCVD Risk Assessment within the last six years
+  NeedMoreInformation: null

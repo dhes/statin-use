@@ -1,4 +1,4 @@
-name: exclusion_has_CVD_acute_myocardial_infarction
+name: exclusion_has_familial_hypercholesterolemia
 data:
   - resourceType: Patient
     name: Joe Smith
