@@ -18,5 +18,5 @@ results:
   # NeedMoreInformation: |-
     # - LDL cholesterol within the last six years
     # - HDL cholesterol within the last six years
-    # - Tobacco smoking status within the last year
+    # - Tobacco smoking status within the last six years
   NeedMoreInformation: null
