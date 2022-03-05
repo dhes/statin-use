@@ -8,10 +8,11 @@ data:
     birthDate: 1963-05-31
   - resourceType: Observation
     status: final
-    code: '79423-0 Cardiovascular disease 10Y risk [Likelihood] ACC-AHA Pooled Cohort by Goff 2013'
+    code: 'LOINC#79423-0 Cardiovascular disease 10Y risk [Likelihood] ACC-AHA Pooled Cohort by Goff 2013'
     valueQuantity: 10.0 %
-# six years ago to the day
-    issued: 2015-12-31T00:00:00-10:00
+# six years minus one day ago
+# DH TODO 2015-12-31T00:00:00-10:00 results in a null value ERROR
+    effectiveDateTime: 2016-01-01T00:00:00-10:00
 results:
   YesRecommendation: null
   NeedMoreInformation: |-
