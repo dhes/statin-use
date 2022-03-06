@@ -11,7 +11,7 @@ data:
     code: 'LOINC#13457-7 Cholesterol in LDL Calc [Mass/Vol]'
     valueQuantity: 131 mg/dL
 # three years ago hawaii time
-    issued: 2018-12-31T00:00:00-10:00
+    effectiveDateTime: 2018-12-31T00:00:00-10:00
 results:
   YesRecommendation: null
 # this test should fail. if ldl is over 130 the other CVD risk factors don't matter

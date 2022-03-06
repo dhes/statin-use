@@ -10,8 +10,8 @@ data:
     status: final
     code: '79423-0 Cardiovascular disease 10Y risk [Likelihood] ACC-AHA Pooled Cohort by Goff 2013'
     valueQuantity: 10.0 %
-# six years plus one day ago
-    issued: 2015-12-30T00:00:00-10:00
+# six-years-plus-one-day ago
+    effectiveDateTime: 2015-12-30T00:00:00-10:00
 results:
   YesRecommendation: null
   NeedMoreInformation: |-

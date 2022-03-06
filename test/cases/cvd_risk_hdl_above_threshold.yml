@@ -1,5 +1,5 @@
 name: cvd_risk_hdl_above_threshold
-# Remenber HDL below (not above) threshold of 40 is a CVD risk factor
+# Remember HDL below (not above) threshold of 40 is a CVD risk factor
 data:
   - resourceType: Patient
     name: Joe Smith
@@ -11,7 +11,7 @@ data:
     code: 'LOINC#2085-9 Cholesterol in HDL [Mass/volume] in Serum or Plasma'
     valueQuantity: 40 mg/dL
 # six years ago plus one day
-    issued: 2015-12-30T00:00:00-10:00
+    effectiveDateTime: 2015-12-31T00:00:00-10:00
 results:
   YesRecommendation: null
   NeedMoreInformation: |-

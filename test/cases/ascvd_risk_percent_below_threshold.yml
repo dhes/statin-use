@@ -8,15 +8,15 @@ data:
     birthDate: 1963-05-31
   - resourceType: Observation
     status: final
-    code: '79423-0 Cardiovascular disease 10Y risk [Likelihood] ACC-AHA Pooled Cohort by Goff 2013'
+    code: 'LOINC#79423-0 Cardiovascular disease 10Y risk [Likelihood] ACC-AHA Pooled Cohort by Goff 2013'
     valueQuantity: 9.9 %
 # six years ago to the day
-    issued: 2015-12-31T00:00:00-10:00
+    effectiveDateTime: 2015-12-31T00:00:00-10:00
 results:
   YesRecommendation: null
-  # This will pass but it's wrong:
+  # This passes but it shouldn't because if the ASCVD risk score is <10 then LDL, HDL and smoking status aren't needed. 
   # NeedMoreInformation: |-
-    # - LDL cholesterol within the last six years
-    # - HDL cholesterol within the last six years
-    # - Tobacco smoking status within the last six years
+  #   - LDL cholesterol within the last six years
+  #   - HDL cholesterol within the last six years
+  #   - Tobacco smoking status within the last six years
   NeedMoreInformation: null

@@ -11,13 +11,13 @@ data:
     code: 'LOINC#13457-7 Cholesterol in LDL Calc [Mass/Vol]'
     valueQuantity: 190 mg/dL
 # three years ago hawaii time
-    issued: 2018-12-31T00:00:00-10:00
+    effectiveDateTime: 2018-12-31T00:00:00-10:00
   - resourceType: Observation
     status: final
     code: 'LOINC#13457-7 Cholesterol in LDL Calc [Mass/Vol]'
     valueQuantity: 191 mg/dL
 # two years ago hawaii time
-    issued: 2018-12-31T00:00:00-10:00
+    effectiveDateTime: 2018-12-31T00:00:00-10:00
 results:
   YesRecommendation: null
   NeedMoreInformation: null

@@ -11,22 +11,22 @@ data:
     status: final
     code: 'LOINC#13457-7 Cholesterol in LDL Calc [Mass/Vol]'
     valueQuantity: 150 mg/dL
-    issued: 2021-06-03T00:00:00.000Z
+    effectiveDateTime: 2021-06-03T00:00:00.000Z
   - resourceType: Observation
     status: final
     code: 'LOINC#2085-9 HDLc SerPl-mCnc'
     valueQuantity: 41 mg/dL
-    issued: 2021-06-03T00:00:00.000Z
+    effectiveDateTime: 2021-06-03T00:00:00.000Z
   - resourceType: Observation
     status: final
     code: 'LOINC#79423-0 Cardiovascular disease 10Y risk [Likelihood] ACC-AHA Pooled Cohort by Goff 2013'
     valueQuantity: 15.1 %
-    issued: 2021-04-05T00:00:00.000Z
+    effectiveDateTime: 2021-04-05T00:00:00.000Z
   - resourceType: Observation
     status: final
     code: 'LOINC#72166-2 Tobacco Smoking Status'
     valueCodeableConcept: 'SNOMEDCT#266927001 Tobacco smoking consumption unknown (finding)'
-    issued: 2021-04-05T00:00:00.000Z
+    effectiveDateTime: 2021-04-05T00:00:00.000Z
 results:
   YesRecommendation: |-
     Start low to moderate intensity lipid lowering therapy based on outcome of shared decision making between patient and provider

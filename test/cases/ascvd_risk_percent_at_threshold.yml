@@ -10,9 +10,11 @@ data:
     status: final
     code: 'LOINC#79423-0 Cardiovascular disease 10Y risk [Likelihood] ACC-AHA Pooled Cohort by Goff 2013'
     valueQuantity: 10.0 %
-# six years minus one day ago
-# DH TODO 2015-12-31T00:00:00-10:00 results in a null value ERROR
-    effectiveDateTime: 2016-01-01T00:00:00-10:00
+# six years ago today
+# DH TODO There must be a bug in CQL. 
+# issued: is supposed to be equivalent to effectiveDateTime: in the CQL, but using
+# ...issued with this date will cause an error. 
+    effectiveDateTime: 2015-12-31T00:00:00-10:00
 results:
   YesRecommendation: null
   NeedMoreInformation: |-

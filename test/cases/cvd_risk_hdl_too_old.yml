@@ -11,7 +11,7 @@ data:
     code: 'LOINC#2085-9 Cholesterol in HDL [Mass/volume] in Serum or Plasma'
     valueQuantity: 39 mg/dL
 # six years ago plus one day
-    issued: 2015-12-30T00:00:00-10:00
+    effectiveDateTime: 2015-12-30T00:00:00-10:00
 results:
   YesRecommendation: null
   NeedMoreInformation: |-

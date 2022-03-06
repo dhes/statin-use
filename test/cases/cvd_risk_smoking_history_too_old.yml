@@ -9,7 +9,7 @@ data:
     status: final
     code: 'LOINC#72166-2 Tobacco smoking status'
     valueCodeableConcept: 'SNOMEDCT#65568007 Cigarette smoker (finding)'
-    issued: 2015-12-30T00:00:00.00-10:00
+    effectiveDateTime: 2015-12-30T00:00:00.00-10:00
 results:
   Recommendation: null
   NeedMoreInformation: |-

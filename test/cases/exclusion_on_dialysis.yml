@@ -9,7 +9,7 @@ data:
     status: completed
     # within the last week
     performedDateTime: 2021-12-29
-    code: 'CPD#90935 Hemodialysis procedure with single physician evaluation'
+    code: 'CPT#90935 Hemodialysis procedure with single physician evaluation'
 results:
   YesRecommendation: null
   NeedMoreInformation: null

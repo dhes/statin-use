@@ -9,7 +9,7 @@ data:
     status: final
     code: 'LOINC#72166-2 Tobacco smoking status'
     valueCodeableConcept: 'SNOMEDCT#65568007 Cigarette smoker (finding)'
-    issued: 2018-10-02T00:00:00.00-10:00
+    effectiveDateTime: 2018-10-02T00:00:00.00-10:00
 results:
   Recommendation: null
 # This fails for a reason. If you smoke the algo doesn't care about LDL, or HDL. 
