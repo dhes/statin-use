@@ -12,7 +12,9 @@ data:
     code: 'ICD10CM#E11.9 Type 2 diabetes mellitus without complications'
 results:
   YesRecommendation: null
-  # This passes but shouldn't. Having diabetes is a risk factor and only one is needed. 
+  # This commented-out section would pass, but having diabetes is a 
+  # ... risk factor and only one risk factor is needed. There is no need to prompt 
+  # ... for HDL, LDL, smoking. 
   # NeedMoreInformation: |-
   #   - LDL cholesterol within the last six years
   #   - HDL cholesterol within the last six years
