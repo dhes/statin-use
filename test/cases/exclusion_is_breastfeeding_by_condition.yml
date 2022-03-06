@@ -6,8 +6,8 @@ data:
 # 41 years old on 2021-12-31
     birthDate: 1980-12-31
   - resourceType: Condition
-    verificationStatus: confirmed
-    clinicalStatus: active
+    verificationStatus: 'http://terminology.hl7.org/CodeSystem/condition-ver-status#confirmed Confirmed'
+    clinicalStatus: 'http://terminology.hl7.org/CodeSystem/condition-clinical#active Active'
     # abatement: null
     code: 'ICD10CM#Z39.1 Encounter for care and examination of lactating mother'
 results:

@@ -7,8 +7,8 @@ data:
 # 57 1/2 years old
     birthDate: 1963-05-31
   - resourceType: Condition
-    verificationStatus: confirmed
-    clinicalStatus: active
+    verificationStatus: 'http://terminology.hl7.org/CodeSystem/condition-ver-status#confirmed Confirmed'
+    clinicalStatus: 'http://terminology.hl7.org/CodeSystem/condition-clinical#active Active'
     code: 'ICD10CM#E11.9 Type 2 diabetes mellitus without complications'
 results:
   YesRecommendation: null
