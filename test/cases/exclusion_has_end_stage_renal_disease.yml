@@ -9,7 +9,7 @@ data:
     verificationStatus: 'http://terminology.hl7.org/CodeSystem/condition-ver-status#confirmed Confirmed'
     clinicalStatus: 'http://terminology.hl7.org/CodeSystem/condition-clinical#active Active'
     # abatement: null
-    code: 'ICD10CM#N18.8 End stage renal disease'
+    code: 'ICD10CM#N18.6 End stage renal disease'
 results:
   YesRecommendation: null
   NeedMoreInformation: null
