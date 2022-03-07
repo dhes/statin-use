@@ -13,7 +13,7 @@ data:
 # six years ago today
 # DH TODO There must be a bug in CQL. 
 # issued: is supposed to be equivalent to effectiveDateTime: in the CQL, but using
-# ...issued with this date will cause an error. 
+# ...issued: with this date will cause an error. 
     effectiveDateTime: 2015-12-31T00:00:00-10:00
 results:
   YesRecommendation: null

@@ -3,9 +3,7 @@ data:
   - resourceType: Patient
     name: Joshua Williams
     gender: male
-# Unless today is 2021-11-10
-# ...please adjust the birthdate to make this patient's   
-# ...age 60 years. 
+    # on 2021-12-31 67 years old
     birthDate: 1954-08-21
   - resourceType: Observation
     status: final
@@ -32,5 +30,4 @@ results:
     Start low to moderate intensity lipid lowering therapy based on outcome of shared decision making between patient and provider
   # see todo.md re smoking status 'unknown'
   # this line really should yield - Tobacco smoking status within the last six years
-  NeedMoreInformation: |-
-    - Tobacco smoking status within the last six years
+  NeedMoreInformation: null
