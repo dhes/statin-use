@@ -7,8 +7,10 @@ data:
     birthDate: 1980-12-31
   - resourceType: Observation
     status: final
-    code: 'LOINC#2810-3 Pregnancy Status'
-    valueCodeableConcept: 'LOINC#LA15173-0 Pregnant'
+    code: 'LOINC#82810-3 Pregnancy Status'
+    # this was the first try...: 
+    # valueCodeableConcept: 'LOINC#LA15173-0 Pregnant'
+    valueCodeableConcept: 'SNOMEDCT#77386006 Patient currently pregnant (finding)'
 # three months pregnant on 2021-12-31
     effectiveDateTime: 2021-09-30T00:00:00-10:00
 results:

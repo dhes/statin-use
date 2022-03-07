@@ -8,7 +8,8 @@ data:
   - resourceType: Observation
     status: final
     code: 'LOINC#63895-7 Breastfeeding status'
-    valueCodeableConcept: 'LOINC#LA29252-6 Currently breastfeeding'
+    # valueCodeableConcept: 'LOINC#LA29252-6 Currently breastfeeding'
+    valueCodeableConcept: 'SNOMEDCT#169750002  Mother currently breast-feeding (finding)'
     effectiveDateTime: 2021-09-30T00:00:00-10:00
 results:
   YesRecommendation: null
