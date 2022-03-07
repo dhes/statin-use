@@ -456,7 +456,8 @@ define HasMissingOrOldData:
   or IsSmoker is null
 
 // Determines if patient has one or more of the 4 risk factors defined by the USPSTF.
-define HasCVDRiskFactors:
+// DH this will be true or null. 
+define HasCVDRiskFactors: // HasACVDRiskFactor or HasAtLeatOneCVDRiskFactor or just HasCVDRiskFactor (without the s) would be a little more accurate DH
   MostRecentValidLDLResult > 130 'mg/dL'
   or MostRecentValidHDLResult < 40 'mg/dL'
   or HasDiabetes

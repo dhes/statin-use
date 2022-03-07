@@ -743,12 +743,21 @@
                            "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
                            "type" : "As",
                            "operand" : {
-                              "type" : "IsNull",
-                              "operand" : {
-                                 "name" : "MostRecentValidLDLResult",
-                                 "libraryName" : "SharedLogic",
-                                 "type" : "ExpressionRef"
-                              }
+                              "type" : "And",
+                              "operand" : [ {
+                                 "type" : "IsNull",
+                                 "operand" : {
+                                    "name" : "MostRecentValidLDLResult",
+                                    "libraryName" : "SharedLogic",
+                                    "type" : "ExpressionRef"
+                                 }
+                              }, {
+                                 "type" : "IsNull",
+                                 "operand" : {
+                                    "name" : "HasCVDRiskFactors",
+                                    "type" : "ExpressionRef"
+                                 }
+                              } ]
                            }
                         },
                         "then" : {
@@ -769,12 +778,21 @@
                            "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
                            "type" : "As",
                            "operand" : {
-                              "type" : "IsNull",
-                              "operand" : {
-                                 "name" : "MostRecentValidHDLResult",
-                                 "libraryName" : "SharedLogic",
-                                 "type" : "ExpressionRef"
-                              }
+                              "type" : "And",
+                              "operand" : [ {
+                                 "type" : "IsNull",
+                                 "operand" : {
+                                    "name" : "MostRecentValidHDLResult",
+                                    "libraryName" : "SharedLogic",
+                                    "type" : "ExpressionRef"
+                                 }
+                              }, {
+                                 "type" : "IsNull",
+                                 "operand" : {
+                                    "name" : "HasCVDRiskFactors",
+                                    "type" : "ExpressionRef"
+                                 }
+                              } ]
                            }
                         },
                         "then" : {
@@ -795,12 +813,21 @@
                            "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
                            "type" : "As",
                            "operand" : {
-                              "type" : "IsNull",
-                              "operand" : {
-                                 "name" : "IsSmoker",
-                                 "libraryName" : "SharedLogic",
-                                 "type" : "ExpressionRef"
-                              }
+                              "type" : "And",
+                              "operand" : [ {
+                                 "type" : "IsNull",
+                                 "operand" : {
+                                    "name" : "IsSmoker",
+                                    "libraryName" : "SharedLogic",
+                                    "type" : "ExpressionRef"
+                                 }
+                              }, {
+                                 "type" : "IsNull",
+                                 "operand" : {
+                                    "name" : "HasCVDRiskFactors",
+                                    "type" : "ExpressionRef"
+                                 }
+                              } ]
                            }
                         },
                         "then" : {
