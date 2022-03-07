@@ -28,6 +28,4 @@ data:
 results:
   YesRecommendation: |-
     Start low to moderate intensity lipid lowering therapy based on outcome of shared decision making between patient and provider
-  # see todo.md re smoking status 'unknown'
-  # this line really should yield - Tobacco smoking status within the last six years
   NeedMoreInformation: null

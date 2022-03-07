@@ -12,11 +12,5 @@ data:
     code: 'ICD10CM#I10 Essential (primary) hypertension'
 results:
   YesRecommendation: null
-  # This passes but only only one CV risk factor is needed:
-  # NeedMoreInformation: |-
-  #   - LDL cholesterol within the last six years
-  #   - HDL cholesterol within the last six years
-  #   - Tobacco smoking status within the last six years
-  #   - ASCVD Risk Assessment within the last six years
   NeedMoreInformation: |-
     - ASCVD Risk Assessment within the last six years

@@ -12,11 +12,5 @@ data:
     effectiveDateTime: 2018-10-02T00:00:00.00-10:00
 results:
   Recommendation: null
-# This fails for a reason. If you smoke the algo doesn't care about LDL, or HDL. 
-# This would pass: 
-# NeedMoreInformation: |-
-#   - LDL cholesterol within the last six years
-#   - HDL cholesterol within the last six years
-#   - ASCVD Risk Assessment within the last six years
   NeedMoreInformation: |-
     - ASCVD Risk Assessment within the last six years

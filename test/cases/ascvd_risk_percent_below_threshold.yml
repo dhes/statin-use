@@ -14,9 +14,4 @@ data:
     effectiveDateTime: 2015-12-31T00:00:00-10:00
 results:
   YesRecommendation: null
-  # This passes but it shouldn't because if the ASCVD risk score is <10 then LDL, HDL and smoking status aren't needed. 
-  # NeedMoreInformation: |-
-  #   - LDL cholesterol within the last six years
-  #   - HDL cholesterol within the last six years
-  #   - Tobacco smoking status within the last six years
   NeedMoreInformation: null

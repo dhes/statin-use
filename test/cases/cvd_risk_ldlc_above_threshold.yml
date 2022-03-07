@@ -14,11 +14,5 @@ data:
     effectiveDateTime: 2018-12-31T00:00:00-10:00
 results:
   YesRecommendation: null
-# this test should fail. if ldl is over 130 the other CVD risk factors don't matter
-  # this would pass: 
-  # NeedMoreInformation: |-
-  #   - HDL cholesterol within the last six years
-  #   - Tobacco smoking status within the last six years
-  #   - ASCVD Risk Assessment within the last six years
   NeedMoreInformation: |-
     - ASCVD Risk Assessment within the last six years

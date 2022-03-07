@@ -14,10 +14,5 @@ data:
     effectiveDateTime: 2015-12-31T00:00:00-10:00
 results:
   YesRecommendation: null
-  # This will pass but it's not what I want: If HDL is low, smoking and LDL don't matter
-  # NeedMoreInformation: |-
-  #   - LDL cholesterol within the last six years
-  #   - Tobacco smoking status within the last six years
-  #   - ASCVD Risk Assessment within the last six years
   NeedMoreInformation: |-
     - ASCVD Risk Assessment within the last six years
