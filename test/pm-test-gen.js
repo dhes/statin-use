@@ -32,8 +32,8 @@ function expectCardsContent(testCase) {
           },
         ],
         extension: {
-          grade: "${RecommendationGrade}",
-          rationale: "${Rationale}",
+          grade: testCase.expected.RecommendationGrade,
+          rationale: testCase.expected.Rationale,
         },
       });
     }

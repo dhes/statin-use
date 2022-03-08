@@ -29,3 +29,5 @@ results:
   YesRecommendation: |-
     Start low to moderate intensity lipid lowering therapy based on outcome of shared decision making between patient and provider
   NeedMoreInformation: null
+  RecommendationGrade: B
+  Rationale: 'The USPSTF found adequate evidence that use of low- to moderate-dose statins reduces the probability of CVD events (MI or ischemic stroke) and mortality by at least a moderate amount in adults aged 40 to 75 years who have 1 or more CVD risk factors (dyslipidemia, diabetes, hypertension, or smoking) and a calculated 10-year CVD event risk of 10% or greater.'
