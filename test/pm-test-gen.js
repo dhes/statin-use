@@ -50,24 +50,6 @@ function expectCardsContent(testCase) {
       });
     }
     return cardArray;
-    // return [{
-    //   uuid: 4,
-    //   summary: 'Statin Use for the Primary Prevention of CVD',
-    //   indicator: 'info',
-    //   detail: testCase.expected.YesRecommendation,
-    //   source: {
-    //     label: 'CDS Connect: Statin Use for the Primary Prevention of CVD in Adults',
-    //     url: 'https://cds.ahrq.gov/cdsconnect/artifact/statin-use-primary-prevention-cvd-adults'
-    //   }
-    // },{
-    //   summary: 'More information needed to complete Statin Use assessment',
-    //   indicator: 'warning',
-    //   detail: testCase.expected.NeedMoreInformation,
-    //   source: {
-    //     label: 'CDS Connect: Statin Use for the Primary Prevention of CVD in Adults',
-    //     url: 'https://cds.ahrq.gov/cdsconnect/artifact/statin-use-primary-prevention-cvd-adults'
-    //   }
-    // }];
   }
 }
 
