@@ -10,4 +10,7 @@ data:
     code: 'SNOMEDCT#90487008 Aortocoronary bypass of two coronary arteries'
 results:
   YesRecommendation: null
+  ExclusionCriteria: |-
+    
+    - has had CVD procedure
   NeedMoreInformation: null

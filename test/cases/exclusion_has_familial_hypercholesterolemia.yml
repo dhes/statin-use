@@ -7,10 +7,10 @@ data:
     birthDate: 1963-05-31
   - resourceType: Condition
     verificationStatus: 'http://terminology.hl7.org/CodeSystem/condition-ver-status#confirmed Confirmed'
-    # any status applies
-    # I21.9 is in two valuesets: Myocardial Infarction and Acute  Myocardial Infarction
-    # as of 2022-03-03 the ICD10 codes in the MI and AMI valuesets are the same
-    code: 'ICD10CM#I21.9 Myocardial infarction (acute) NOS'
+    code: 'ICD10CM#E78.01 Familial hypercholesterolemia'
 results:
   YesRecommendation: null
+  ExclusionCriteria: |-
+    
+    - has familial hypercholesterolemia
   NeedMoreInformation: null

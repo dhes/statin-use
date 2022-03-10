@@ -11,7 +11,8 @@ data:
     valueCodeableConcept: 'SNOMEDCT#65568007 Cigarette smoker (finding)'
     effectiveDateTime: 2015-12-30T00:00:00.00-10:00
 results:
-  Recommendation: null
+  YesRecommendation: null
+  ExclusionCriteria: null
   NeedMoreInformation: |-
     - LDL cholesterol within the last six years
     - HDL cholesterol within the last six years

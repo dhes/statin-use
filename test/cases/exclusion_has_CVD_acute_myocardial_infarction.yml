@@ -13,4 +13,7 @@ data:
     code: 'ICD10CM#I21.9 Myocardial infarction (acute) NOS'
 results:
   YesRecommendation: null
+  ExclusionCriteria: |-
+    
+    - has CVD
   NeedMoreInformation: null

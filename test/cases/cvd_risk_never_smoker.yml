@@ -11,7 +11,8 @@ data:
     valueCodeableConcept: 'SNOMEDCT#266919005 Never smoked tobacco (finding)'
     effectiveDateTime: 2020-04-05T00:00:00.000Z
 results:
-  Recommendation: null
+  YesRecommendation: null
+  ExclusionCriteria: null
   NeedMoreInformation: |-
     - LDL cholesterol within the last six years
     - HDL cholesterol within the last six years

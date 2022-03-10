@@ -12,4 +12,7 @@ data:
     code: 'ICD10CM#N18.6 End stage renal disease'
 results:
   YesRecommendation: null
+  ExclusionCriteria: |-
+    
+    - has end stage renal disease
   NeedMoreInformation: null

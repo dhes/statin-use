@@ -17,6 +17,7 @@ data:
     effectiveDateTime: 2015-12-31T00:00:00-10:00
 results:
   YesRecommendation: null
+  ExclusionCriteria: null
   NeedMoreInformation: |-
     - LDL cholesterol within the last six years
     - HDL cholesterol within the last six years

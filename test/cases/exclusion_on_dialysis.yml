@@ -12,4 +12,7 @@ data:
     code: 'CPT#90935 Hemodialysis procedure with single physician evaluation'
 results:
   YesRecommendation: null
+  ExclusionCriteria: |-
+    
+    - on dialysis
   NeedMoreInformation: null

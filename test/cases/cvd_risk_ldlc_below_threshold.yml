@@ -14,6 +14,7 @@ data:
     effectiveDateTime: 2018-12-31T00:00:00-10:00
 results:
   YesRecommendation: null
+  ExclusionCriteria: null
   NeedMoreInformation: |-
     - HDL cholesterol within the last six years
     - Tobacco smoking status within the last six years

@@ -12,5 +12,6 @@ data:
     code: 'ICD10CM#E11.9 Type 2 diabetes mellitus without complications'
 results:
   YesRecommendation: null
+  ExclusionCriteria: null  
   NeedMoreInformation: |-
     - ASCVD Risk Assessment within the last six years

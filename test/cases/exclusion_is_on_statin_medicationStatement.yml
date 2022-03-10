@@ -12,4 +12,7 @@ data:
     code: 'RXNORM#859751 rosuvastatin calcium 20 MG Oral Tablet'
 results:
   YesRecommendation: null
+  ExclusionCriteria: |-
+    
+    - on statin therapy
   NeedMoreInformation: null

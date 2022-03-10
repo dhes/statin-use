@@ -14,4 +14,7 @@ data:
       end: '2021-12-15'
 results:
   YesRecommendation: null
+  ExclusionCriteria: |-
+    
+    - has end stage renal disease
   NeedMoreInformation: null

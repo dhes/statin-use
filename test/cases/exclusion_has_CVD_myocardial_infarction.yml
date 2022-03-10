@@ -13,4 +13,7 @@ data:
     code: 'SNOMEDCT#129574000 Postoperative myocardial infarction'
 results:
   YesRecommendation: null
+  ExclusionCriteria: |-
+    
+    - has CVD
   NeedMoreInformation: null

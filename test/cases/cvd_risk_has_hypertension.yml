@@ -12,5 +12,6 @@ data:
     code: 'ICD10CM#I10 Essential (primary) hypertension'
 results:
   YesRecommendation: null
+  ExclusionCriteria: null  
   NeedMoreInformation: |-
     - ASCVD Risk Assessment within the last six years

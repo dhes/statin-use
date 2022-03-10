@@ -12,4 +12,7 @@ data:
     code: 'ICD10CM#Z39.1 Encounter for care and examination of lactating mother'
 results:
   YesRecommendation: null
+  ExclusionCriteria: |-
+    
+    - is breastfeeding
   NeedMoreInformation: null

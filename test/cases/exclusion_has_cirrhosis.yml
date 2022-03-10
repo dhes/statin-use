@@ -11,4 +11,7 @@ data:
     code: 'ICD10CM#K74.60 Cirrhosis, cirrhotic (hepatic) (liver)'
 results:
   YesRecommendation: null
+  ExclusionCriteria: |-
+    
+    - has cirrhosis
   NeedMoreInformation: null

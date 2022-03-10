@@ -12,4 +12,7 @@ data:
     code: 'ICD10CM#Z33.1 Pregnancy (single) (uterine)'
 results:
   YesRecommendation: null
+  ExclusionCriteria: |-
+    
+    - is pregnant
   NeedMoreInformation: null

@@ -14,5 +14,6 @@ data:
     effectiveDateTime: 2018-12-31T00:00:00-10:00
 results:
   YesRecommendation: null
+  ExclusionCriteria: null
   NeedMoreInformation: |-
     - ASCVD Risk Assessment within the last six years

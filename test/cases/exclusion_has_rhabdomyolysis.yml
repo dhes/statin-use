@@ -12,4 +12,7 @@ data:
     code: 'ICD10CM#M62.82 Rhabdomyolysis'
 results:
   YesRecommendation: null
+  ExclusionCriteria: |-
+    
+    - has rhabdomyolysis
   NeedMoreInformation: null
