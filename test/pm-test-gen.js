@@ -19,7 +19,7 @@ function expectCardsContent(testCase) {
         uuid: 4,
         summary: "Statin Use for the Primary Prevention of CVD",
         indicator: "info",
-        detail: testCase.expected.YesRecommendation,
+        detail: testCase.expected.YesRecommendation + testCase.expected.ExclusionCriteria,
         source: {
           label:
             "CDS Connect: Statin Use for the Primary Prevention of CVD in Adults",
@@ -27,7 +27,7 @@ function expectCardsContent(testCase) {
         },
         overrideReasons: [
           {
-            uuid: "4",
+            uuid: 4,
             display: "Done reviewing",
           },
         ],
