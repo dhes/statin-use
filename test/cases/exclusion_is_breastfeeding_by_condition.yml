@@ -9,6 +9,7 @@ data:
     verificationStatus: 'http://terminology.hl7.org/CodeSystem/condition-ver-status#confirmed Confirmed'
     clinicalStatus: 'http://terminology.hl7.org/CodeSystem/condition-clinical#active Active'
     # abatement: null
+    # the CQL doesn't seem to care about onsetDateTime
     code: 'ICD10CM#Z39.1 Encounter for care and examination of lactating mother'
 results:
   YesRecommendation: null
