@@ -1,4 +1,4 @@
-name: exclusion_has_end_stage_renal_disease_encouter
+name: exclusion_has_end_stage_renal_disease_encounter
 data:
   - resourceType: Patient
     name: Jane Smith
