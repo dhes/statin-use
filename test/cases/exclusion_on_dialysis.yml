@@ -14,5 +14,5 @@ results:
   YesRecommendation: null
   ExclusionCriteria: |-
     
-    - on dialysis
+    - is on dialysis
   NeedMoreInformation: null

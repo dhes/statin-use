@@ -14,5 +14,5 @@ results:
   YesRecommendation: null
   ExclusionCriteria: |-
     
-    - on statin therapy
+    - is on statin therapy
   NeedMoreInformation: null
