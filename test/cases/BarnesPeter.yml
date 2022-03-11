@@ -80,9 +80,7 @@ data:
     status: completed
     performedDateTime: 2011-07-12
 results:
-  Numerator: true
-  Denominator Exclusions: false
-  InDemographic: true
-  NeedsColorectalCancerScreening: false
-  Recommendation: null
-
+  YesRecommendation: null
+  ExclusionCriteria: null
+  NeedMoreInformation: |-
+    - LDL cholesterol within the last six years
